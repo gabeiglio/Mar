@@ -1,0 +1,14 @@
+//This is a single line comment
+
+var name string = "Gabriel Igliozzi"
+const age int = 19
+
+if name == "Gabriel" {
+  print("sapo")
+} else {
+  name = "Gabriel"
+}
+
+func identifier(name string, lastName string) void {
+  name = name + " " + lastName
+}

@@ -1,0 +1,17 @@
+//This is the third file test of the Mar Programming language
+
+/*
+
+Things to test here"
+* comments
+* delcarations
+* expressions
+
+*/
+
+var name string = "Gabriel"
+
+if true {
+    print(name)
+    const age int = 19
+}

@@ -1,0 +1,62 @@
+Mar Grammar in EBNF
+
+whitespace ->   | \n | \t
+
+letter -> [A-Za-z]
+digit -> [0-9]
+
+charLiteral    -> 'letter'
+integerLiteral -> (-)? digit+
+doubleLiteral  -> integer.digit+
+boolLiteral    -> true | false
+stringLiteral  -> " any unicode or ascii character "
+nilLiteral     -> nil
+
+identifier -> ( _ | letter )+ digit*
+
+argList   -> ( (expression,)* (expression)? )
+paramList -> ( (identifier type,)* (identifier type)? )
+
+primaryExpr ->   charLiteral 
+               | integerLiteral 
+               | doubleLiteral
+               | boolLiteral
+               | stringLiteral
+               | identifier
+               | nilLiteral
+               | ( expression )
+               
+callExpr  -> primaryExpr argList?
+unaryExpr -> (-|!)? callExpr
+termExpr  -> primaryExpr ( ( * | / | % ) termExpr)*
+sumExpr   -> termExpr ( ( + | - ) sumExpr)*
+
+not -> !
+and -> &
+or  -> |
+
+relationalExpr -> sumExpr ( ( < | > | <= | >= ) relationalExpr)*
+equalityExpr   -> relationalExpr ( ( == | != ) equalityExpr)*
+logicalAndExpr -> equalityExpr ( andand logicalAndExpr)*
+logicalOrExpr  -> logicalAndExpr ( oror logicalOrExpr)*
+
+expression -> logicalOrExpr
+
+block -> { ( statement | declaration )* }
+
+ifStmt     -> if expression block ( else block | ( else ifStmt)+ )?
+exprStmt   -> expression
+whileStmt  -> while expression block
+returnStmt -> return expresion
+assignmentStmt -> identifier = expression
+statement  -> ifStmt | exprStmt | whileStmt | returnStmt | returnStmt
+
+type -> int | double | char | bool | string | void
+
+varDecl   -> var identifier type ( = expression | identifier (argList)?)?
+constDecl -> const identifier type ( = expression | identifier (argList)?)?
+funcDecl  -> func identifier paramList type block
+classDecl -> class identifier block
+declaration -> varDecl | constDecl | funcDecl | classDecl
+
+program -> (statements | delcarations)*
