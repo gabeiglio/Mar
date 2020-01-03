@@ -47,7 +47,7 @@ void Evaluator::evaluateExpr(Expr* ptr, int tabs) {
         printTabs(tabs + 1);
         std::cout << "Call expr: " + result->identifier->lexeme + " ";
         
-        for (int i = 0; i < result->arguments.size(); i++) {
+        for (unsigned long int i = 0; i < result->arguments.size(); i++) {
             evaluateExpr(result->arguments[i].get());
         }
     }

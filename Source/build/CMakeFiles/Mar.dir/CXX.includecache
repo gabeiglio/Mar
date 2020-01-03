@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Evaluator.cpp
+Evaluator.hpp
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Evaluator.hpp
+
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Evaluator.hpp
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Stmt.hpp
 -
@@ -13,10 +17,6 @@
 -
 iostream
 -
-
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.cpp
-Lexer.hpp
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.hpp
 
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.hpp
 fstream
