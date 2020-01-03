@@ -100,7 +100,7 @@ bool Lexer::readComment() {
     
     //Read single line comments
     if (peek() == '/') {
-        while (*forward != '\n') advance();
+        while (peek() != '\n') advance();
         lineNumber++;
         advance();
     }

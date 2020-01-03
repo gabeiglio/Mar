@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Evaluator.cpp
-Evaluator.hpp
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Evaluator.hpp
-
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Evaluator.hpp
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Stmt.hpp
 -

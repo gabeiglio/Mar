@@ -24,7 +24,7 @@ void compile(T source) {
 		for (Token token: tokens)
 			std::cout << token.lexeme << " " << token.type << std::endl;
 
-		std::cout << "\n Abstract Syntax Tree\n";
+		std::cout << "\nAbstract Syntax Tree\n";
 		Parser parser(tokens);
 		std::vector<std::unique_ptr<Node>> nodes = parser.parse();
 
@@ -38,17 +38,21 @@ void compile(T source) {
 	}
 }
 
-void initReplWithSource(char* source) {
-	while (strcmp(source, "#stop"))  
+//Init compiler with repl
+void initRepl() {
+	while (true) {
+		char* source = new char[1094];
+		std::cout << "\n> ";
+		std::cin.getline(source, 1094);
 		compile(source);
+	}
+}
+
+//Init compiler with file 
+void initCompilerWithFile(std::string& filePath) {
+	compile(filePath);
 }
 
 int main() {
-
-//	char* code = new char[1094];
-	std::string filePath = "/Users/gabeiglio/Desktop/Developer/Mar/Tests/Declarations.mar";
-//	std::cin >> code;
-//	initReplWithSource(filePath);	
-	compile(filePath);
-//	delete[] code;
+	initRepl();
 }

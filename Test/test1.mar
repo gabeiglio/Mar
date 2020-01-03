@@ -1,0 +1,21 @@
+//This is a single line commnet which will be ignored
+
+/* 
+ And this is a multiple line
+ comment that will also get
+ ignored
+*/
+
+//Initialize variables
+var name string = "Gabriel"
+var lastName string = "Igliozzi"
+
+
+//Create function that will add both strings and return it
+func addNames(str1 string, str2 string) string {
+	return str1 + " " + str2
+}
+
+print(addNames(name, lastName))
+
+
