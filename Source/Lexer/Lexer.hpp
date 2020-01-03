@@ -58,8 +58,13 @@ private:
     };
 
 public:
-    Lexer(const char* sourceFile);
+
+	//Construct with filepath
+    Lexer(std::string& sourceFile);
+
+	//Construct with small source code (REPL)
+	Lexer(char* sourceCode);
+
     ~Lexer();
-    
     std::vector<Token> tokenize();
 };

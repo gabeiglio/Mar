@@ -6,6 +6,30 @@
 
 #IncludeRegexTransform: 
 
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Evaluator.hpp
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Stmt.hpp
+-
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Decl.hpp
+-
+iostream
+-
+
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.cpp
+Lexer.hpp
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.hpp
+
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.hpp
+fstream
+-
+iostream
+-
+vector
+-
+map
+-
+Token.hpp
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Token.hpp
+
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Token.hpp
 string
 -
@@ -30,12 +54,6 @@ Expr.hpp
 vector
 -
 
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Parser.cpp
-Parser.hpp
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Parser.hpp
-iostream
--
-
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Parser.hpp
 stdio.h
 -
@@ -49,4 +67,16 @@ Nodes/Decl.hpp
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Decl.hpp
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Token.hpp
 -
+
+/Users/gabeiglio/Desktop/Developer/Mar/Source/main.cpp
+iostream
+-
+fstream
+-
+Lexer/Lexer.hpp
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.hpp
+Parser/Parser.hpp
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Parser.hpp
+Evaluator/Evaluator.hpp
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Evaluator.hpp
 

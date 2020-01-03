@@ -8,7 +8,7 @@
 
 #include "Lexer.hpp"
 
-Lexer::Lexer(const char* sourceFile) {
+Lexer::Lexer(std::string& sourceFile) {
     
     //Open and check file
     file.open(sourceFile, std::ifstream::binary);
@@ -27,6 +27,16 @@ Lexer::Lexer(const char* sourceFile) {
     lexemeBegin = buffer1;
     forward = buffer1;
     
+}
+
+//Construct with direct source code
+Lexer::Lexer(char* sourceCode) {
+	//Load buffer
+	buffer1 = sourceCode;
+
+	//Load pointers
+	lexemeBegin = buffer1;
+	forward = buffer1;
 }
 
 Lexer::~Lexer() {
