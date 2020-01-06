@@ -33,7 +33,7 @@ Lexer::Lexer(std::string& sourceFile) {
 Lexer::Lexer(char* sourceCode) {
 	//Load buffer
 	buffer1 = sourceCode;
-
+	
 	//Load pointers
 	lexemeBegin = buffer1;
 	forward = buffer1;
@@ -84,7 +84,7 @@ Token Lexer::parseIdentifierOrKeyword() {
         advance();
     }
     
-    //If true then the lexeme is not a reserved word therefore is an identifier
+	//If true then the lexeme is not a reserved word therefore is an identifier
     if (keywords.find(lexeme) == keywords.end())
         return Token {TokenType::identifier, lexeme};
     
@@ -135,7 +135,7 @@ std::vector<Token> Lexer::tokenize() {
     
     while (*forward != '\0') {
         switch (*forward) {
-            case '\n': lineNumber++; break;
+			case '\n': lineNumber++; break;
             case '{': tokens.push_back(Token {TokenType::openBrace, std::string(1, *forward)}); break;
             case '}': tokens.push_back(Token {TokenType::closeBrace, std::string(1, *forward)}); break;
             case '(': tokens.push_back(Token {TokenType::openParen, std::string(1, *forward)}); break;
@@ -198,7 +198,6 @@ std::vector<Token> Lexer::tokenize() {
                 } else throw "[Error] Unexpected Token '" + std::string(1, *forward) + "' at line: " + std::to_string(lineNumber);
                 break;
         }
-        advance();
         
         //Look for numbers
         if (isdigit(*forward))
@@ -207,7 +206,8 @@ std::vector<Token> Lexer::tokenize() {
         //Look for identifiers / keywords
         if (isalpha(*forward) || *forward == '_')
             tokens.push_back(parseIdentifierOrKeyword());
-        
+       
+	   advance();	
     }
     
     return tokens;

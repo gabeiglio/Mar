@@ -40,7 +40,8 @@ void compile(T source) {
 
 //Init compiler with repl
 void initRepl() {
-	while (true) {
+	int tries = 0;
+	while (tries++ < 5) {
 		char* source = new char[1094];
 		std::cout << "\n> ";
 		std::cin.getline(source, 1094);
