@@ -199,16 +199,15 @@ std::vector<Token> Lexer::tokenize() {
                 break;
         }
 		
-		advance();
-
         //Look for numbers
         if (isdigit(*forward))
             tokens.push_back(parseNumber());
         
         //Look for identifiers / keywords
-        if (isalpha(*forward) || *forward == '_')
+		else if (isalpha(*forward) || *forward == '_')
             tokens.push_back(parseIdentifierOrKeyword());
        
+		else advance();
     }
     
     return tokens;
