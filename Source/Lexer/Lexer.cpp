@@ -83,7 +83,7 @@ Token Lexer::parseIdentifierOrKeyword() {
         lexeme += *forward;
         advance();
     }
-    
+   
 	//If true then the lexeme is not a reserved word therefore is an identifier
     if (keywords.find(lexeme) == keywords.end())
         return Token {TokenType::identifier, lexeme};
@@ -198,7 +198,9 @@ std::vector<Token> Lexer::tokenize() {
                 } else throw "[Error] Unexpected Token '" + std::string(1, *forward) + "' at line: " + std::to_string(lineNumber);
                 break;
         }
-        
+		
+		advance();
+
         //Look for numbers
         if (isdigit(*forward))
             tokens.push_back(parseNumber());
@@ -207,7 +209,6 @@ std::vector<Token> Lexer::tokenize() {
         if (isalpha(*forward) || *forward == '_')
             tokens.push_back(parseIdentifierOrKeyword());
        
-	   advance();	
     }
     
     return tokens;

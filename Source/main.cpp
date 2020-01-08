@@ -40,11 +40,11 @@ void compile(T source) {
 
 //Init compiler with repl
 void initRepl() {
-	int tries = 0;
-	while (tries++ < 5) {
+	while (true) {
 		char* source = new char[1094];
 		std::cout << "\n> ";
 		std::cin.getline(source, 1094);
+		if (!strcmp(source, "#stop")) return;
 		compile(source);
 	}
 }
@@ -54,6 +54,17 @@ void initCompilerWithFile(std::string& filePath) {
 	compile(filePath);
 }
 
-int main() {
-	initRepl();
+int main(int argc, char* argv[]) {
+	if (argc == 2) {
+		if (!strcmp(argv[1], "--repl")) initRepl();
+		else {
+			std::ifstream test(argv[1]);
+			if (!test) {
+			   	std::cout << "[ERROR] File does not exist" << std::endl;
+			   	return 1;
+			}
+			std::string path (argv[1]);
+			initCompilerWithFile(path);
+		}
+	}
 }
