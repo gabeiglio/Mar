@@ -189,7 +189,7 @@ std::unique_ptr<Expr> Parser::parseAndLogicalExpr() {
 std::unique_ptr<Expr> Parser::parseRelationalExpr() {
     std::unique_ptr<Expr> rhs = parseSumExpr();
     
-    if (tokens[index].type == TokenType::doubleEqual || tokens[index].type == TokenType::notEqual || tokens[index].type == TokenType::leftEqual || tokens[index].type == TokenType::rightEqual) {
+    if (tokens[index].type == TokenType::doubleEqual || tokens[index].type == TokenType::notEqual || tokens[index].type == TokenType::leftEqual || tokens[index].type == TokenType::rightEqual || tokens[index].type == TokenType::arrowLeft || tokens[index].type == TokenType::arrowRight) {
         TokenType type = tokens[index].type;
         index++;
         return std::unique_ptr<Expr> { new BinaryOpExpr {rhs, parseRelationalExpr(), type} };
