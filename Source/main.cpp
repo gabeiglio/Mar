@@ -20,11 +20,11 @@ void compile(T source) {
 		Lexer lexer(source);
 		std::vector<Token> tokens = lexer.tokenize();
 		
-		std::cout << "\nTokens List: \n"; 
+		std::cout << "\n***** Tokens List: *****\n \n"; 
 		for (Token token: tokens)
-			std::cout << token.lexeme << " " << token.type << std::endl;
+			std::cout << " " << token.lexeme << " " << token.type << std::endl;
 
-		std::cout << "\nAbstract Syntax Tree\n";
+		std::cout << "\n***** Abstract Syntax Tree *****\n\n";
 		Parser parser(tokens);
 		std::vector<std::unique_ptr<Node>> nodes = parser.parse();
 
@@ -41,10 +41,14 @@ void compile(T source) {
 //Init compiler with repl
 void initRepl() {
 	while (true) {
+
 		char* source = new char[1094];
 		std::cout << "\n> ";
 		std::cin.getline(source, 1094);
-		if (!strcmp(source, "#stop")) return;
+
+		if (!strcmp(source, "#stop")) 
+			return;
+
 		compile(source);
 	}
 }

@@ -101,7 +101,16 @@ void Evaluator::evaluateStmt(Stmt *ptr, int tabs) {
         evaluateExpr(result->expr.get());
         std::cout << '\n';
     }
-    
+
+	if (ForInStmt* result = dynamic_cast<ForInStmt*>(ptr)) {
+		std::cout << "For stmt: ";
+		evaluateExpr(result->identifier.get());
+		std::cout << " in range: :";
+		evaluateExpr(result->range.get());
+		std::cout << '\n';
+		evaluateBlock(result->block.get());
+	}
+
 }
 
 void Evaluator::evaluateDecl(Decl *ptr, int tabs) {

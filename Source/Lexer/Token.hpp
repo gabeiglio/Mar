@@ -33,7 +33,7 @@ enum TokenType {
     intType, stringType, charType, boolType, doubleType, voidType,
     
     //Keywords
-    varKey, constKey, ifKey, elseKey, funcKey, classKey, whileKey, returnKey
+    varKey, constKey, ifKey, elseKey, funcKey, classKey, whileKey, returnKey, forKey, inKey
     
 };
 

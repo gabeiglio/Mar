@@ -21,6 +21,7 @@ std::vector<std::unique_ptr<Node>> Parser::parse() {
             case TokenType::whileKey: nodes.push_back(parseWhileStmt()); break;
             case TokenType::ifKey: nodes.push_back(parseIfStmt()); break;
             case TokenType::returnKey: nodes.push_back(parseReturnStmt()); break;
+			case TokenType::forKey: nodes.push_back(parseForInStmt()); break;
             default: nodes.push_back(parseExprStmt());
         }
     }
@@ -41,9 +42,9 @@ std::unique_ptr<Block> Parser::parseBlock() {
         else if (tokens[index].type == TokenType::constKey) nodes.push_back(parseConstDecl());
         else if (tokens[index].type == TokenType::funcKey) nodes.push_back(parseFuncDecl());
         else if (tokens[index].type == TokenType::classKey) nodes.push_back(parseClassDecl());
-        else nodes.push_back(parseExprStmt());
-    }
-        
+        else if (tokens[index].type == TokenType::forKey) nodes.push_back(parseForInStmt());
+		else nodes.push_back(parseExprStmt());
+	}
     consume(TokenType::closeBrace);
     return std::unique_ptr<Block> { new Block{nodes} };
 }
@@ -149,6 +150,21 @@ std::unique_ptr<Stmt> Parser::parseReturnStmt() {
 std::unique_ptr<Stmt> Parser::parseWhileStmt() {
     consume(TokenType::whileKey);
     return std::unique_ptr<WhileStmt> { new WhileStmt{parseOrLogicalExpr(), parseBlock()} };
+}
+
+std::unique_ptr<Stmt> Parser::parseForInStmt() {
+	consume(TokenType::forKey);
+	std::unique_ptr<IdentifierExpr> identifier;
+	
+	//Get identifier
+	if (IdentifierExpr* result = dynamic_cast<IdentifierExpr*>(parsePrimaryExpr().get())) {
+		std::string str = result->lexeme;
+		identifier = std::unique_ptr<IdentifierExpr> { new IdentifierExpr{str} };
+	} else throw "[ERROR] For loop must contain a valid identifier";
+
+	consume(TokenType::inKey);
+
+	return std::unique_ptr<ForInStmt> { new ForInStmt{identifier, parsePrimaryExpr(), parseBlock()} };
 }
 
 std::unique_ptr<Stmt> Parser::parseIfStmt() {
