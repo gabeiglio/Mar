@@ -1,0 +1,47 @@
+/* This file will be intendent to test the following:
+	* Statetemnts like if, while 
+	* Declarations like var, const, func, class
+	* calls, expressions, nested stuff
+*/
+
+class Person {
+
+	//Const attributes
+	const name string = "Gabriel"
+	const lastName string = "Igliozzi"
+	
+	//var attributes
+	var age int = 19
+	var isAllowed bool = true
+
+	func augmentAgeBy(amt int) void {
+		age = age + amt
+	}
+
+	func getFullName() string {
+		return name + " " lastName
+	}
+
+}
+
+//const gabriel Person = Person()
+//print(gabriel.getFullName())
+
+//Test statements
+var count int = 0
+
+while count < 100 && count > 90 {
+	if count % 2 == 0 {
+		print("even number" + count)
+	}
+	count = count + 1
+}
+
+//Array syntax
+//var numbers [int] = [1,2,3,4,5,6,7,8,9,10]
+
+//For loop
+/* 
+
+	for variablename in expression (number, int variable, array
+*/
