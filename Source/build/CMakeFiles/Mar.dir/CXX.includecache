@@ -6,30 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Evaluator.hpp
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Stmt.hpp
--
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Decl.hpp
--
-iostream
--
-
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.cpp
-Lexer.hpp
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.hpp
-
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.hpp
-fstream
--
-iostream
--
-vector
--
-map
--
-Token.hpp
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Token.hpp
-
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Token.hpp
 string
 -
@@ -39,6 +15,10 @@ vector
 -
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Token.hpp
 -
+Expr.hpp
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Expr.hpp
+Stmt.hpp
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Stmt.hpp
 
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Expr.hpp
 string
@@ -54,29 +34,21 @@ Expr.hpp
 vector
 -
 
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Parser.hpp
-stdio.h
--
-vector
--
-Nodes/Expr.hpp
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Expr.hpp
-Nodes/Stmt.hpp
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Stmt.hpp
-Nodes/Decl.hpp
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Decl.hpp
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Token.hpp
--
-
-/Users/gabeiglio/Desktop/Developer/Mar/Source/main.cpp
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/SymbolTable/SymbolTable.cpp
+SymbolTable.hpp
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/SymbolTable/SymbolTable.hpp
 iostream
 -
-fstream
+
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/SymbolTable/SymbolTable.hpp
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Token.hpp
 -
-Lexer/Lexer.hpp
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.hpp
-Parser/Parser.hpp
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Parser.hpp
-Evaluator/Evaluator.hpp
-/Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Evaluator.hpp
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Decl.hpp
+-
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Expr.hpp
+-
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Stmt.hpp
+-
+map
+-
 

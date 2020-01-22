@@ -204,6 +204,33 @@ Parser/Parser.cpp.s:
 	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Parser/Parser.cpp.s
 .PHONY : Parser/Parser.cpp.s
 
+Parser/SymbolTable/SymbolTable.o: Parser/SymbolTable/SymbolTable.cpp.o
+
+.PHONY : Parser/SymbolTable/SymbolTable.o
+
+# target to build an object file
+Parser/SymbolTable/SymbolTable.cpp.o:
+	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Parser/SymbolTable/SymbolTable.cpp.o
+.PHONY : Parser/SymbolTable/SymbolTable.cpp.o
+
+Parser/SymbolTable/SymbolTable.i: Parser/SymbolTable/SymbolTable.cpp.i
+
+.PHONY : Parser/SymbolTable/SymbolTable.i
+
+# target to preprocess a source file
+Parser/SymbolTable/SymbolTable.cpp.i:
+	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Parser/SymbolTable/SymbolTable.cpp.i
+.PHONY : Parser/SymbolTable/SymbolTable.cpp.i
+
+Parser/SymbolTable/SymbolTable.s: Parser/SymbolTable/SymbolTable.cpp.s
+
+.PHONY : Parser/SymbolTable/SymbolTable.s
+
+# target to generate assembly for a file
+Parser/SymbolTable/SymbolTable.cpp.s:
+	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Parser/SymbolTable/SymbolTable.cpp.s
+.PHONY : Parser/SymbolTable/SymbolTable.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -249,6 +276,9 @@ help:
 	@echo "... Parser/Parser.o"
 	@echo "... Parser/Parser.i"
 	@echo "... Parser/Parser.s"
+	@echo "... Parser/SymbolTable/SymbolTable.o"
+	@echo "... Parser/SymbolTable/SymbolTable.i"
+	@echo "... Parser/SymbolTable/SymbolTable.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -18,6 +18,14 @@ CMakeFiles/Mar.dir/Parser/Parser.cpp.o: ../Parser/Nodes/Expr.hpp
 CMakeFiles/Mar.dir/Parser/Parser.cpp.o: ../Parser/Nodes/Stmt.hpp
 CMakeFiles/Mar.dir/Parser/Parser.cpp.o: ../Parser/Parser.cpp
 CMakeFiles/Mar.dir/Parser/Parser.cpp.o: ../Parser/Parser.hpp
+CMakeFiles/Mar.dir/Parser/Parser.cpp.o: ../Parser/SymbolTable/SymbolTable.hpp
+
+CMakeFiles/Mar.dir/Parser/SymbolTable/SymbolTable.cpp.o: ../Lexer/Token.hpp
+CMakeFiles/Mar.dir/Parser/SymbolTable/SymbolTable.cpp.o: ../Parser/Nodes/Decl.hpp
+CMakeFiles/Mar.dir/Parser/SymbolTable/SymbolTable.cpp.o: ../Parser/Nodes/Expr.hpp
+CMakeFiles/Mar.dir/Parser/SymbolTable/SymbolTable.cpp.o: ../Parser/Nodes/Stmt.hpp
+CMakeFiles/Mar.dir/Parser/SymbolTable/SymbolTable.cpp.o: ../Parser/SymbolTable/SymbolTable.cpp
+CMakeFiles/Mar.dir/Parser/SymbolTable/SymbolTable.cpp.o: ../Parser/SymbolTable/SymbolTable.hpp
 
 CMakeFiles/Mar.dir/main.cpp.o: ../Evaluator/Evaluator.hpp
 CMakeFiles/Mar.dir/main.cpp.o: ../Lexer/Lexer.hpp
@@ -26,5 +34,6 @@ CMakeFiles/Mar.dir/main.cpp.o: ../Parser/Nodes/Decl.hpp
 CMakeFiles/Mar.dir/main.cpp.o: ../Parser/Nodes/Expr.hpp
 CMakeFiles/Mar.dir/main.cpp.o: ../Parser/Nodes/Stmt.hpp
 CMakeFiles/Mar.dir/main.cpp.o: ../Parser/Parser.hpp
+CMakeFiles/Mar.dir/main.cpp.o: ../Parser/SymbolTable/SymbolTable.hpp
 CMakeFiles/Mar.dir/main.cpp.o: ../main.cpp
 

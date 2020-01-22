@@ -20,5 +20,6 @@ add_executable(
  		${PARSER_DIR}/Nodes/Stmt.hpp
 		${PARSER_DIR}/Nodes/Decl.hpp
 	 	${EVAL_DIR}/Evaluator.cpp
+		${PARSER_DIR}/SymbolTable/SymbolTable.cpp
 )
 		

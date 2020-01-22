@@ -13,6 +13,8 @@
 
 #include <vector>
 #include "/Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Token.hpp"
+#include "Expr.hpp"
+#include "Stmt.hpp"
 
 #endif /* Decl_hpp */
 

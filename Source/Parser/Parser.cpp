@@ -62,15 +62,17 @@ std::unique_ptr<Decl> Parser::parseVariableDecl() {
         std::string str = result->lexeme;
         identifier = std::unique_ptr<IdentifierExpr> {new IdentifierExpr{str}};
     } else throw "[ERROR] Variable declaration must containt a valid identifier";
-    
+
     //Check for type
-    if (tokens[index].isType()) {
-        type = tokens[index].type;
+	if (tokens[index].isType()) {
+		type = tokens[index].type;
         index++;
-    } else throw "[ERROR] Variable declaration must containt a valid type";
-    
+	} else throw "[ERROR] Variable declaration must containt a valid type";
+
     consume(TokenType::equal);
-    return std::unique_ptr<VarDecl> { new VarDecl{identifier, type, parseOrLogicalExpr()} };
+	
+	enviroment.define(identifier.get()->lexeme, TokenType::varKey, nullptr);
+	return std::unique_ptr<VarDecl> { new VarDecl{identifier, type, parseOrLogicalExpr()} };
 }
 
 std::unique_ptr<Decl> Parser::parseConstDecl() {
@@ -84,7 +86,7 @@ std::unique_ptr<Decl> Parser::parseConstDecl() {
         std::string str = result->lexeme;
         identifier = std::unique_ptr<IdentifierExpr> {new IdentifierExpr{str}};
     } else throw "[ERROR] Variable declaration must containt a valid identifier";
-    
+   
     //Check for type
     if (tokens[index].isType()) {
         type = tokens[index].type;
@@ -92,7 +94,8 @@ std::unique_ptr<Decl> Parser::parseConstDecl() {
     } else throw "[ERROR] Variable declaration must containt a valid type";
     
     consume(TokenType::equal);
-    
+
+	enviroment.define(identifier.get()->lexeme, TokenType::constKey, nullptr);	
     return std::unique_ptr<ConstDecl> { new ConstDecl{identifier, type, parseOrLogicalExpr()} };
 }
 
@@ -122,6 +125,7 @@ std::unique_ptr<Decl> Parser::parseFuncDecl() {
     //Get the body of the funciton
     body = parseBlock();
     
+	enviroment.define(identifier.get()->lexeme, TokenType::funcKey, body.get());
     return std::unique_ptr<FuncDecl> { new FuncDecl{identifier, params, type, body} };
 }
 
@@ -136,7 +140,8 @@ std::unique_ptr<Decl> Parser::parseClassDecl() {
         std::string str = result->lexeme;
         identifier = std::unique_ptr<IdentifierExpr> { new IdentifierExpr{str} };
     } else throw "[ERROR] Function declaration must containt a valid identifier";
-    
+   
+   	enviroment.define(identifier.get()->lexeme, TokenType::classKey, nullptr);	
     return std::unique_ptr<ClassDecl> { new ClassDecl{identifier, parseBlock()} };
 }
 
@@ -252,6 +257,8 @@ std::unique_ptr<Expr> Parser::parseCallOrAssignmentExpr() {
     
     //Perform check to know for sure is an identifier, if not then is an error
     if (IdentifierExpr* result = dynamic_cast<IdentifierExpr*>(identifier.get())) {
+        
+        //Argument list
         if (tokens[index].type == TokenType::openParen) {
             return std::unique_ptr<CallExpr> { new CallExpr{std::unique_ptr<IdentifierExpr> { new IdentifierExpr {result->lexeme}}, parseArgumentList()} };
         }
@@ -259,8 +266,8 @@ std::unique_ptr<Expr> Parser::parseCallOrAssignmentExpr() {
         //Assigment expr
         if (tokens[index].type == TokenType::equal) {
             consume(TokenType::equal);
-            
             std::unique_ptr<IdentifierExpr> name = std::unique_ptr<IdentifierExpr> { new IdentifierExpr{result->lexeme} };
+            enviroment.assign(name.get()->lexeme, nullptr);
             return std::unique_ptr<AssignExpr> { new AssignExpr{name, parseOrLogicalExpr()} };
         }
     }
@@ -329,4 +336,10 @@ std::vector<std::unique_ptr<ParamDecl>> Parser::parseParameterList() {
     consume(TokenType::closeParen);
     
     return params;
+}
+
+
+/* ----- MARK: Helper functions ------- */
+void Parser::showAllDeclarations() {
+	enviroment.showAllSymbols();
 }

@@ -32,10 +32,15 @@ void compile(T source) {
 
 		for (unsigned long int i = 0; i < nodes.size(); i++)
 			eval.evaluate(nodes[i].get());
+		
+		std::cout << "\n***** Symbol Table ****\n\n";
+		parser.showAllDeclarations();
 
 	} catch (std::string& error) {
-		std::cout << error << std::endl;
-	}
+		std::cerr << error << std::endl;
+    } catch (const char* error) {
+        std::cerr << error << std::endl;
+    }
 }
 
 //Init compiler with repl

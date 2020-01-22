@@ -19,6 +19,14 @@ CMakeFiles/Mar.dir/Parser/Parser.cpp.o
  /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Stmt.hpp
  /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Parser.cpp
  /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Parser.hpp
+ /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/SymbolTable/SymbolTable.hpp
+CMakeFiles/Mar.dir/Parser/SymbolTable/SymbolTable.cpp.o
+ /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Token.hpp
+ /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Decl.hpp
+ /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Expr.hpp
+ /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Stmt.hpp
+ /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/SymbolTable/SymbolTable.cpp
+ /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/SymbolTable/SymbolTable.hpp
 CMakeFiles/Mar.dir/main.cpp.o
  /Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Evaluator.hpp
  /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.hpp
@@ -27,4 +35,5 @@ CMakeFiles/Mar.dir/main.cpp.o
  /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Expr.hpp
  /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Stmt.hpp
  /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Parser.hpp
+ /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/SymbolTable/SymbolTable.hpp
  /Users/gabeiglio/Desktop/Developer/Mar/Source/main.cpp

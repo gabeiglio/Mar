@@ -40,6 +40,15 @@ struct WhileStmt: public Stmt {
     WhileStmt(std::unique_ptr<Expr> expr, std::unique_ptr<Block> block): expr(std::move(expr)), block(std::move(block)) {}
 };
 
+struct ForInStmt: public Stmt {
+	std::unique_ptr<IdentifierExpr> identifier;
+	std::unique_ptr<Expr> range;
+	std::unique_ptr<Block> block;
+
+	ForInStmt(std::unique_ptr<IdentifierExpr>& identifier, std::unique_ptr<Expr> range, std::unique_ptr<Block> block):
+		identifier(std::move(identifier)), range(std::move(range)), block(std::move(block)) {}
+};
+
 struct ReturnStmt: public Stmt {
     std::unique_ptr<Expr> expr;
     ReturnStmt(std::unique_ptr<Expr> expr): expr(std::move(expr)) {}
