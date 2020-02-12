@@ -1,0 +1,4 @@
+//In this file the scope will be tested
+
+var name string = "Gabriel"
+name = "sapo"
