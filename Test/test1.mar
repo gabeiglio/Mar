@@ -11,7 +11,6 @@ var number int = 10
 var name string = "Gabriel"
 var lastName string = "Igliozzi"
 
-
 //Create function that will add both strings and return it
 func addNames(str1 string, str2 string) string {
 	return str1 + " " + str2
@@ -19,4 +18,15 @@ func addNames(str1 string, str2 string) string {
 
 print(addNames(name, lastName))
 
+const result string = addNames(name, lastName)
+//result = "sapo"
 
+name = "hols"
+
+if identifer == "hola" {
+    var isTrue bool = false
+    
+    if false {
+        const isTrue_ bool = true
+    }
+}

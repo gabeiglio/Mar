@@ -15,7 +15,7 @@ class Person {
 	var isAllowed bool = true
 
 	func augmentAgeBy(amt int) void {
-		age = age + amt
+        age = age + amt
 	}
 
 	func getFullName() string {
@@ -34,14 +34,5 @@ while count < 100 && count > 90 {
 	if count % 2 == 0 {
 		print("even number" + count)
 	}
-	count = count + 1
+	//count = count + 1
 }
-
-//Array syntax
-//var numbers [int] = [1,2,3,4,5,6,7,8,9,10]
-
-//For loop
-/* 
-
-	for variablename in expression (number, int variable, array
-*/

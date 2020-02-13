@@ -139,7 +139,8 @@ void Evaluator::evaluateDecl(Decl *ptr, int tabs) {
         std::cout << "Func decl: ";
         evaluateExpr(result->identifier.get());
         
-        std::cout << result->params.size();
+        std::cout << '\n';
+        
         for (int i = 0; i < result->params.size(); i++) {
             evaluateDecl(result->params[i].get());
         }
@@ -158,9 +159,10 @@ void Evaluator::evaluateDecl(Decl *ptr, int tabs) {
     }
     
     if (ParamDecl* result = dynamic_cast<ParamDecl*>(ptr)) {
+        printTabs(tabs + 2);
         std::cout << "Param delc: ";
         evaluateExpr(result->name.get());
-        std::cout << result->type << '\n';
+        std::cout << " " << result->type << '\n';
     }
 }
 

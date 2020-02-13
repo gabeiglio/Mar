@@ -30,7 +30,7 @@ private:
 
     //Expressions
     std::unique_ptr<Expr> parsePrimaryExpr();
-    std::unique_ptr<Expr> parseCallOrAssignmentExpr();
+    std::unique_ptr<Expr> parseCallOrAssignmentExpr(SymbolTable* enviroment);
     std::unique_ptr<Expr> parseUnaryExpr();
     std::unique_ptr<Expr> parseTermExpr();
     std::unique_ptr<Expr> parseSumExpr();
@@ -40,22 +40,20 @@ private:
     
     //Statements
     std::unique_ptr<Stmt> parseExprStmt();
-    std::unique_ptr<Stmt> parseIfStmt();
-    std::unique_ptr<Stmt> parseWhileStmt();
     std::unique_ptr<Stmt> parseReturnStmt();
-	std::unique_ptr<Stmt> parseForInStmt();
+    std::unique_ptr<Stmt> parseIfStmt(SymbolTable* enviroment);
+    std::unique_ptr<Stmt> parseWhileStmt(SymbolTable* enviroment);
+	std::unique_ptr<Stmt> parseForInStmt(SymbolTable* enviroment);
 
     //Parse block
-    std::unique_ptr<Block> parseBlock();
+    std::unique_ptr<Block> parseBlock(SymbolTable* enviroment);
     
     //Declarations
-    std::unique_ptr<Decl> parseVariableDecl();
-    std::unique_ptr<Decl> parseConstDecl();
-    std::unique_ptr<Decl> parseFuncDecl();
-    std::unique_ptr<Decl> parseClassDecl();
-    
-    //Helper functions
-    
+    std::unique_ptr<Decl> parseVariableDecl(SymbolTable* enviroment);
+    std::unique_ptr<Decl> parseConstDecl(SymbolTable* enviroment);
+    std::unique_ptr<Decl> parseFuncDecl(SymbolTable* enviroment);
+    std::unique_ptr<Decl> parseClassDecl(SymbolTable* enviroment);
+        
     //Consume a token if current token != type an exception is thrown
     void consume(TokenType type);
     std::vector<std::unique_ptr<Expr>> parseArgumentList();

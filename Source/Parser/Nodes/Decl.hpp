@@ -25,7 +25,7 @@ struct Decl: public Node {
 struct ParamDecl: public Decl {
     std::unique_ptr<IdentifierExpr> name;
     TokenType type;
-    ParamDecl(std::unique_ptr<IdentifierExpr> name, TokenType type): name(std::move(name)), type(type) {}
+    ParamDecl(std::unique_ptr<IdentifierExpr>& name, TokenType type): name(std::move(name)), type(type) {}
 };
 
 struct VarDecl: public Decl {

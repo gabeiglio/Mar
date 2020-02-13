@@ -1,4 +1,6 @@
 //In this file the scope will be tested
 
-var name string = "Gabriel"
-name = "sapo"
+class Node {
+    var data int = 0
+    var nextNode Node = nil
+}

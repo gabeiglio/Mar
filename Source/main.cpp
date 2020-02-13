@@ -33,12 +33,12 @@ void compile(T source) {
 		for (unsigned long int i = 0; i < nodes.size(); i++)
 			eval.evaluate(nodes[i].get());
 		
-		std::cout << "\n***** Symbol Table ****\n\n";
-		parser.showAllDeclarations();
-
-	} catch (std::string& error) {
-		std::cerr << error << std::endl;
+//		std::cout << "\n***** Symbol Table *******\n\n";
+//		parser.showAllDeclarations();
+        
     } catch (const char* error) {
+        std::cerr << error << std::endl;
+    } catch (const std::string& error) {
         std::cerr << error << std::endl;
     }
 }
@@ -46,7 +46,6 @@ void compile(T source) {
 //Init compiler with repl
 void initRepl() {
 	while (true) {
-
 		char* source = new char[1094];
 		std::cout << "\n> ";
 		std::cin.getline(source, 1094);
