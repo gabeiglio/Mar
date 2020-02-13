@@ -18,13 +18,20 @@ struct Symbol {
 class SymbolTable {
 private:
 	std::map<std::string, Symbol> symbols;
-public:
+    SymbolTable* enclosing; //parent scope
     
+    //Debug only
+    std::vector<SymbolTable*> children;
+    
+    //Helper method
+    Symbol* get(const std::string& identifier);
+
+public:
 	void define(const std::string& identifier, TokenType type, Node* value);
     void assign(const std::string& identifier, Node* value);
+    void setEnclosing(SymbolTable* enclosing);
     
-	Symbol* get(const std::string& identifier);
-    
+    //Debug
     void showAllSymbols();
 };
 
