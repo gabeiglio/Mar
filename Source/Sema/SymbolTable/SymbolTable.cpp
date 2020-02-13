@@ -1,5 +1,4 @@
 #include "SymbolTable.hpp"
-#include <iostream>
 
 void SymbolTable::define(const std::string& identifier, TokenType type, Node*  value) {
 	std::pair<std::string, Symbol> entry {identifier, Symbol {identifier, type, value}};	
@@ -40,19 +39,4 @@ Symbol* SymbolTable::get(const std::string& identifier) {
 void SymbolTable::setEnclosing(SymbolTable* enclosing) {
     children.push_back(enclosing);
     this->enclosing = enclosing;
-}
-
-void SymbolTable::showAllSymbols() {
-	for (auto const& [key, val]: symbols)
-		std::cout << " " << val.identifier << " | " << val.type << " | " << val.value << " | \n" << std::endl;
-    
-    std::cout << "--------------------------" << std::endl;
-    
-    for (auto result: children)
-        for (auto const& [key, val]: symbols)
-            std::cout << " " << val.identifier << " | " << val.type << " | " << val.value << " | \n" << std::endl;
-    
-    if (enclosing != nullptr)
-        enclosing->showAllSymbols();
-    
 }

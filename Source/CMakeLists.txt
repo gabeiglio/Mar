@@ -9,6 +9,7 @@ project(Mar)
 set(LEXER_DIR Lexer)
 set(PARSER_DIR Parser)
 set(EVAL_DIR Evaluator)
+set(SEMA_DIR Sema)
 
 add_executable( 
 		Mar
@@ -20,6 +21,8 @@ add_executable(
  		${PARSER_DIR}/Nodes/Stmt.hpp
 		${PARSER_DIR}/Nodes/Decl.hpp
 	 	${EVAL_DIR}/Evaluator.cpp
-		${PARSER_DIR}/SymbolTable/SymbolTable.cpp
+        ${EVAL_DIR}/Visitor/Visitor.hpp
+        ${SEMA_DIR}/SemanticAnalyzer.cpp
+		${SEMA_DIR}/SymbolTable/SymbolTable.cpp
 )
 		

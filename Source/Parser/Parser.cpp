@@ -14,15 +14,15 @@ std::vector<std::unique_ptr<Node>> Parser::parse() {
     
     while (index < tokens.size()) {
         switch (tokens[index].type) {
-            case TokenType::varKey: nodes.push_back(parseVariableDecl(&enviroment)); break;
-            case TokenType::constKey: nodes.push_back(parseConstDecl(&enviroment)); break;
-            case TokenType::funcKey: nodes.push_back(parseFuncDecl(&enviroment)); break;
-            case TokenType::classKey: nodes.push_back(parseClassDecl(&enviroment)); break;
-            case TokenType::whileKey: nodes.push_back(parseWhileStmt(&enviroment)); break;
-            case TokenType::ifKey: nodes.push_back(parseIfStmt(&enviroment)); break;
+            case TokenType::varKey: nodes.push_back(parseVariableDecl()); break;
+            case TokenType::constKey: nodes.push_back(parseConstDecl()); break;
+            case TokenType::funcKey: nodes.push_back(parseFuncDecl()); break;
+            case TokenType::classKey: nodes.push_back(parseClassDecl()); break;
+            case TokenType::whileKey: nodes.push_back(parseWhileStmt()); break;
+            case TokenType::ifKey: nodes.push_back(parseIfStmt()); break;
             case TokenType::returnKey: nodes.push_back(parseReturnStmt()); break;
-			case TokenType::forKey: nodes.push_back(parseForInStmt(&enviroment)); break;
-            default: nodes.push_back(parseCallOrAssignmentExpr(&enviroment));
+			case TokenType::forKey: nodes.push_back(parseForInStmt()); break;
+            default: nodes.push_back(parseExprStmt());
         }
     }
     
@@ -30,24 +30,20 @@ std::vector<std::unique_ptr<Node>> Parser::parse() {
 }
 
 //Parse Block
-std::unique_ptr<Block> Parser::parseBlock(SymbolTable* enviroment) {
+std::unique_ptr<Block> Parser::parseBlock() {
     std::vector<std::unique_ptr<Node>> nodes;
     consume(TokenType::openBrace);
     
-    //Create a new enviroment to represent scope
-    SymbolTable* enclosing = new SymbolTable();
-    enclosing->setEnclosing(enviroment);
-    
     while (tokens[index].type != TokenType::closeBrace) {
-        if (tokens[index].type == TokenType::whileKey) nodes.push_back(parseWhileStmt(enclosing));
+        if (tokens[index].type == TokenType::whileKey) nodes.push_back(parseWhileStmt());
         else if (tokens[index].type == TokenType::returnKey) nodes.push_back(parseReturnStmt());
-        else if (tokens[index].type == TokenType::ifKey) nodes.push_back(parseIfStmt(enclosing));
-        else if (tokens[index].type == TokenType::forKey) nodes.push_back(parseForInStmt(enclosing));
-        else if (tokens[index].type == TokenType::varKey) nodes.push_back(parseVariableDecl(enclosing));
-        else if (tokens[index].type == TokenType::constKey) nodes.push_back(parseConstDecl(enclosing));
-        else if (tokens[index].type == TokenType::funcKey) nodes.push_back(parseFuncDecl(enclosing));
-        else if (tokens[index].type == TokenType::classKey) nodes.push_back(parseClassDecl(enclosing));
-		else nodes.push_back(parseCallOrAssignmentExpr(enclosing));
+        else if (tokens[index].type == TokenType::ifKey) nodes.push_back(parseIfStmt());
+        else if (tokens[index].type == TokenType::forKey) nodes.push_back(parseForInStmt());
+        else if (tokens[index].type == TokenType::varKey) nodes.push_back(parseVariableDecl());
+        else if (tokens[index].type == TokenType::constKey) nodes.push_back(parseConstDecl());
+        else if (tokens[index].type == TokenType::funcKey) nodes.push_back(parseFuncDecl());
+        else if (tokens[index].type == TokenType::classKey) nodes.push_back(parseClassDecl());
+		else nodes.push_back(parseExprStmt());
 	}
     
     consume(TokenType::closeBrace);
@@ -56,7 +52,7 @@ std::unique_ptr<Block> Parser::parseBlock(SymbolTable* enviroment) {
 
 /* ---- MARK: Parsing Declarations ------ */
 
-std::unique_ptr<Decl> Parser::parseVariableDecl(SymbolTable* enviroment) {
+std::unique_ptr<Decl> Parser::parseVariableDecl() {
     std::unique_ptr<IdentifierExpr> identifier;
     TokenType type;
     
@@ -74,15 +70,15 @@ std::unique_ptr<Decl> Parser::parseVariableDecl(SymbolTable* enviroment) {
         index++;
 	} else throw "[ERROR] Variable declaration must containt a valid type";
 
-    consume(TokenType::equal);
-	    
-    //Add variable declaration to symbol table
-	enviroment->define(identifier.get()->lexeme, TokenType::varKey, nullptr);
+    if (index < tokens.size() && tokens[index].type == TokenType::equal) {
+        consume(TokenType::equal);
+        return std::unique_ptr<VarDecl> { new VarDecl{identifier, type, parseOrLogicalExpr()} };
+    }
     
-	return std::unique_ptr<VarDecl> { new VarDecl{identifier, type, parseOrLogicalExpr()} };
+    return std::unique_ptr<VarDecl> { new VarDecl{identifier, type, nullptr} };
 }
 
-std::unique_ptr<Decl> Parser::parseConstDecl(SymbolTable* enviroment) {
+std::unique_ptr<Decl> Parser::parseConstDecl() {
     std::unique_ptr<IdentifierExpr> identifier;
     TokenType type;
     
@@ -100,15 +96,15 @@ std::unique_ptr<Decl> Parser::parseConstDecl(SymbolTable* enviroment) {
         index++;
     } else throw "[ERROR] Variable declaration must containt a valid type";
     
-    consume(TokenType::equal);
-
-    //Add const declaration to symbol table
-	enviroment->define(identifier.get()->lexeme, TokenType::constKey, nullptr);
+    if (index < tokens.size() && tokens[index].type == TokenType::equal) {
+        consume(TokenType::equal);
+        return std::unique_ptr<ConstDecl> { new ConstDecl{identifier, type, parseOrLogicalExpr()} };
+    }
     
-    return std::unique_ptr<ConstDecl> { new ConstDecl{identifier, type, parseOrLogicalExpr()} };
+    return std::unique_ptr<ConstDecl> { new ConstDecl{identifier, type, nullptr} };
 }
 
-std::unique_ptr<Decl> Parser::parseFuncDecl(SymbolTable* enviroment) {
+std::unique_ptr<Decl> Parser::parseFuncDecl() {
     
     //Function properties
     std::unique_ptr<IdentifierExpr> identifier;
@@ -135,14 +131,11 @@ std::unique_ptr<Decl> Parser::parseFuncDecl(SymbolTable* enviroment) {
     } else throw "[ERROR] Function does not return a valid type";
     
     //Get the body of the funciton
-    body = parseBlock(enviroment);
-    
-    //Add func delcaration to symbol table (needs to add parameters and also a new enviroment for block)
-	enviroment->define(identifier.get()->lexeme, TokenType::funcKey, body.get());
+    body = parseBlock();
     return std::unique_ptr<FuncDecl> { new FuncDecl{identifier, params, type, body} };
 }
 
-std::unique_ptr<Decl> Parser::parseClassDecl(SymbolTable* enviroment) {
+std::unique_ptr<Decl> Parser::parseClassDecl() {
     std::unique_ptr<IdentifierExpr> identifier;
     
     //Consume class key
@@ -153,10 +146,8 @@ std::unique_ptr<Decl> Parser::parseClassDecl(SymbolTable* enviroment) {
         std::string str = result->lexeme;
         identifier = std::unique_ptr<IdentifierExpr> { new IdentifierExpr{str} };
     } else throw "[ERROR] Function declaration must containt a valid identifier";
-   
-    //Add class to symbol table (needs to add new enviroment for stuff inside (scope))
-   	enviroment->define(identifier.get()->lexeme, TokenType::classKey, nullptr);
-    return std::unique_ptr<ClassDecl> { new ClassDecl{identifier, parseBlock(enviroment)} };
+    
+    return std::unique_ptr<ClassDecl> { new ClassDecl{identifier, parseBlock()} };
 }
 
 /* ---- MARK: Parsing Statements ------ */
@@ -166,12 +157,12 @@ std::unique_ptr<Stmt> Parser::parseReturnStmt() {
     return std::unique_ptr<ReturnStmt> { new ReturnStmt{parseOrLogicalExpr()} };
 }
 
-std::unique_ptr<Stmt> Parser::parseWhileStmt(SymbolTable* enviroment) {
+std::unique_ptr<Stmt> Parser::parseWhileStmt() {
     consume(TokenType::whileKey);
-    return std::unique_ptr<WhileStmt> { new WhileStmt{parseOrLogicalExpr(), parseBlock(enviroment)} };
+    return std::unique_ptr<WhileStmt> { new WhileStmt{parseOrLogicalExpr(), parseBlock()} };
 }
 
-std::unique_ptr<Stmt> Parser::parseForInStmt(SymbolTable* enviroment) {
+std::unique_ptr<Stmt> Parser::parseForInStmt() {
 	consume(TokenType::forKey);
 	std::unique_ptr<IdentifierExpr> identifier;
 	
@@ -183,12 +174,12 @@ std::unique_ptr<Stmt> Parser::parseForInStmt(SymbolTable* enviroment) {
 
 	consume(TokenType::inKey);
 
-	return std::unique_ptr<ForInStmt> { new ForInStmt{identifier, parsePrimaryExpr(), parseBlock(enviroment)} };
+	return std::unique_ptr<ForInStmt> { new ForInStmt{identifier, parsePrimaryExpr(), parseBlock()} };
 }
 
-std::unique_ptr<Stmt> Parser::parseIfStmt(SymbolTable* enviroment) {
+std::unique_ptr<Stmt> Parser::parseIfStmt() {
     consume(TokenType::ifKey);
-    return std::unique_ptr<IfStmt> { new IfStmt{parseOrLogicalExpr(), parseBlock(enviroment)} };
+    return std::unique_ptr<IfStmt> { new IfStmt{parseOrLogicalExpr(), parseBlock()} };
 }
 
 std::unique_ptr<Stmt> Parser::parseExprStmt() {
@@ -263,10 +254,10 @@ std::unique_ptr<Expr> Parser::parseUnaryExpr() {
         return std::unique_ptr<UnaryExpr> { new UnaryExpr{tokens[index - 1].type, parsePrimaryExpr()} };
     }
     
-    return parseCallOrAssignmentExpr(nullptr);
+    return parseCallOrAssignmentExpr();
 }
 
-std::unique_ptr<Expr> Parser::parseCallOrAssignmentExpr(SymbolTable* enviroment) {
+std::unique_ptr<Expr> Parser::parseCallOrAssignmentExpr() {
     std::unique_ptr<Expr> identifier = parsePrimaryExpr();
     
     //Perform check to know for sure is an identifier, if not then is an error
@@ -281,9 +272,6 @@ std::unique_ptr<Expr> Parser::parseCallOrAssignmentExpr(SymbolTable* enviroment)
         if (tokens[index].type == TokenType::equal) {
             consume(TokenType::equal);
             std::unique_ptr<IdentifierExpr> name = std::unique_ptr<IdentifierExpr> { new IdentifierExpr{result->lexeme} };
-            
-            //Assign a new value to an axisting variable with the help of the symbol table
-            enviroment->assign(name.get()->lexeme, nullptr);
             return std::unique_ptr<AssignExpr> { new AssignExpr{name, parseOrLogicalExpr()} };
         }
     }
@@ -294,7 +282,7 @@ std::unique_ptr<Expr> Parser::parseCallOrAssignmentExpr(SymbolTable* enviroment)
 std::unique_ptr<Expr> Parser::parsePrimaryExpr() {
     switch (tokens[index].type) {
         case TokenType::identifier: index++; return std::unique_ptr<IdentifierExpr> { new IdentifierExpr {tokens[index - 1].lexeme} };
-        case TokenType::intLiteral: index++; return std::unique_ptr<IntergerExpr> { new IntergerExpr {stoi(tokens[index - 1].lexeme)} };
+        case TokenType::intLiteral: index++; return std::unique_ptr<IntegerExpr> { new IntegerExpr {stoi(tokens[index - 1].lexeme)} };
         case TokenType::doubleLiteral: index++; return std::unique_ptr<DoubleExpr> { new DoubleExpr {stod(tokens[index - 1].lexeme)} };
         case TokenType::boolLiteral: index++; return std::unique_ptr<BoolExpr> { new BoolExpr { tokens[index - 1].lexeme == "true"}};
         case TokenType::charLiteral: index++; return std::unique_ptr<CharExpr> { new CharExpr { tokens[index - 1].lexeme[0] }};
@@ -353,10 +341,4 @@ std::vector<std::unique_ptr<ParamDecl>> Parser::parseParameterList() {
     consume(TokenType::closeParen);
     
     return params;
-}
-
-
-/* ----- MARK: Debug functions ------- */
-void Parser::showAllDeclarations() {
-	enviroment.showAllSymbols();
 }

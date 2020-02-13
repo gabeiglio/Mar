@@ -1,6 +1,6 @@
 //In this file the scope will be tested
 
 class Node {
-    var data int = 0
-    var nextNode Node = nil
+    var data int
+    var nextNode Node
 }

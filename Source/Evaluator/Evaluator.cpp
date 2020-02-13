@@ -18,7 +18,7 @@ void Evaluator::evaluateExpr(Expr* ptr, int tabs) {
         std::cout << "Identifier expr: " + result->lexeme;
     }
     
-    if (IntergerExpr* result = dynamic_cast<IntergerExpr*>(ptr)) {
+    if (IntegerExpr* result = dynamic_cast<IntegerExpr*>(ptr)) {
         std::cout << "Integer expr: " + std::to_string(result->lexeme);
     }
     

@@ -12,7 +12,7 @@
 #include "Lexer/Lexer.hpp"
 #include "Parser/Parser.hpp"
 #include "Evaluator/Evaluator.hpp"
-
+#include "Sema/SemanticAnalyzer.hpp"
 
 template<typename T>
 void compile(T source) {
@@ -32,9 +32,8 @@ void compile(T source) {
 
 		for (unsigned long int i = 0; i < nodes.size(); i++)
 			eval.evaluate(nodes[i].get());
-		
-//		std::cout << "\n***** Symbol Table *******\n\n";
-//		parser.showAllDeclarations();
+        
+        SemanticAnalyzer sema(nodes);
         
     } catch (const char* error) {
         std::cerr << error << std::endl;
