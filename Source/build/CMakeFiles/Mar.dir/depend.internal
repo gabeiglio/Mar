@@ -10,9 +10,6 @@ CMakeFiles/Mar.dir/Evaluator/Evaluator.cpp.o
  /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Expr.hpp
  /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Stmt.hpp
 CMakeFiles/Mar.dir/Lexer/Lexer.cpp.o
- /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.cpp
- /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.hpp
- /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Token.hpp
 CMakeFiles/Mar.dir/Parser/Parser.cpp.o
  /Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Visitor/Visitor.hpp
  /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Token.hpp

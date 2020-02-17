@@ -41,6 +41,8 @@ Stmt.hpp
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Stmt.hpp
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Token.hpp
 -
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Visitor/Visitor.hpp
+-
 
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Expr.hpp
 string
@@ -57,6 +59,8 @@ vector
 -
 Expr.hpp
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Expr.hpp
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Visitor/Visitor.hpp
+-
 
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Parser.hpp
 stdio.h
@@ -71,6 +75,10 @@ Nodes/Decl.hpp
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Decl.hpp
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Token.hpp
 -
+
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SemanticAnalyzer.cpp
+SemanticAnalyzer.hpp
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SemanticAnalyzer.hpp
 
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SemanticAnalyzer.hpp
 vector
@@ -87,8 +95,6 @@ vector
 -
 SymbolTable/SymbolTable.hpp
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SymbolTable/SymbolTable.hpp
-iostream
--
 
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SymbolTable/SymbolTable.hpp
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Token.hpp
@@ -115,4 +121,6 @@ Evaluator/Evaluator.hpp
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Evaluator.hpp
 Sema/SemanticAnalyzer.hpp
 /Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SemanticAnalyzer.hpp
+Sema/SymbolTable/SymbolTable.hpp
+/Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SymbolTable/SymbolTable.hpp
 

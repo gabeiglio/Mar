@@ -13,7 +13,6 @@
 #include "/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Decl.hpp"
 #include <iostream>
 
-#endif /* Evaluator_hpp */
 
 class Evaluator {
 private:
@@ -28,3 +27,5 @@ private:
 public:
     void evaluate(Node* ptr);
 };
+
+#endif /* Evaluator_hpp */

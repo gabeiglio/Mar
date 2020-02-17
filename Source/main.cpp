@@ -13,6 +13,7 @@
 #include "Parser/Parser.hpp"
 #include "Evaluator/Evaluator.hpp"
 #include "Sema/SemanticAnalyzer.hpp"
+#include "Sema/SymbolTable/SymbolTable.hpp"
 
 template<typename T>
 void compile(T source) {
@@ -33,7 +34,11 @@ void compile(T source) {
 		for (unsigned long int i = 0; i < nodes.size(); i++)
 			eval.evaluate(nodes[i].get());
         
+        //Create global symbol table
+        SymbolTable* enviroment = new SymbolTable();
+        
         SemanticAnalyzer sema(nodes);
+        sema.performAnalysis(enviroment);
         
     } catch (const char* error) {
         std::cerr << error << std::endl;

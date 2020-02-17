@@ -22,7 +22,7 @@ std::vector<std::unique_ptr<Node>> Parser::parse() {
             case TokenType::ifKey: nodes.push_back(parseIfStmt()); break;
             case TokenType::returnKey: nodes.push_back(parseReturnStmt()); break;
 			case TokenType::forKey: nodes.push_back(parseForInStmt()); break;
-            default: nodes.push_back(parseExprStmt());
+            default: nodes.push_back(parseOrLogicalExpr());
         }
     }
     
@@ -43,7 +43,7 @@ std::unique_ptr<Block> Parser::parseBlock() {
         else if (tokens[index].type == TokenType::constKey) nodes.push_back(parseConstDecl());
         else if (tokens[index].type == TokenType::funcKey) nodes.push_back(parseFuncDecl());
         else if (tokens[index].type == TokenType::classKey) nodes.push_back(parseClassDecl());
-		else nodes.push_back(parseExprStmt());
+		else nodes.push_back(parseOrLogicalExpr());
 	}
     
     consume(TokenType::closeBrace);

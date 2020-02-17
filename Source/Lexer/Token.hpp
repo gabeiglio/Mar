@@ -13,8 +13,6 @@
 
 #include <string>
 
-#endif /* Token_hpp */
-
 enum TokenType {
     
     identifier,
@@ -53,3 +51,5 @@ struct Token {
         }
     }
 };
+
+#endif /* Token_hpp */

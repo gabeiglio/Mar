@@ -17,8 +17,6 @@
 #include "Nodes/Decl.hpp"
 #include "/Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Token.hpp"
 
-#endif /* Parser_hpp */
-
 class Parser {
 private:
     std::vector<Token> tokens;
@@ -61,3 +59,5 @@ public:
     std::vector<std::unique_ptr<Node>> parse();
 
 };
+
+#endif /* Parser_hpp */

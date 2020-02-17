@@ -3,12 +3,7 @@
 #ifndef Visitor_hpp
 #define Visitor_hpp
 
-//#include "/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Decl.hpp"
-//#include "/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Stmt.hpp"
-//#include "/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Expr.hpp"
-
-#endif
-
+//Expressions
 struct IdentifierExpr;
 struct IntegerExpr;
 struct DoubleExpr;
@@ -20,20 +15,22 @@ struct BinaryOpExpr;
 struct CallExpr;
 struct AssignExpr;
 
+//Statements
 struct ExprStmt;
 struct IfStmt;
 struct WhileStmt;
 struct ForInStmt;
 struct ReturnStmt;
 
+//Declarations
 struct ParamDecl;
 struct VarDecl;
 struct ConstDecl;
 struct FuncDecl;
 struct ClassDecl;
 
+//Block
 struct Block;
-
 
 struct Visitor {
     
@@ -67,3 +64,5 @@ struct Visitor {
     virtual void visit(ClassDecl& decl) = 0;
     
 };
+
+#endif

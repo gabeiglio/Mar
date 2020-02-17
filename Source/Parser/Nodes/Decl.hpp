@@ -15,11 +15,11 @@
 #include "Expr.hpp"
 #include "Stmt.hpp"
 #include "/Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Token.hpp"
-
-#endif /* Decl_hpp */
+#include "/Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Visitor/Visitor.hpp"
 
 struct Decl: public Node {
     virtual ~Decl() {};
+    virtual void accept(Visitor& visitor) = 0;
 };
 
 struct ParamDecl: public Decl {
@@ -27,7 +27,7 @@ struct ParamDecl: public Decl {
     TokenType type;
     ParamDecl(std::unique_ptr<IdentifierExpr>& name, TokenType type): name(std::move(name)), type(type) {}
     
-    virtual void accept(Visitor& visitor) { visitor.visit(*this); }
+    void accept(Visitor& visitor) { visitor.visit(*this); }
 
 };
 
@@ -38,7 +38,7 @@ struct VarDecl: public Decl {
     VarDecl(std::unique_ptr<IdentifierExpr>& identifier, TokenType type, std::unique_ptr<Expr> expr):
         identifier(std::move(identifier)), type(type), expr(std::move(expr)) {}
     
-    virtual void accept(Visitor& visitor) { visitor.visit(*this); }
+    void accept(Visitor& visitor) { visitor.visit(*this); }
 
 };
 
@@ -49,7 +49,7 @@ struct ConstDecl: public Decl {
     ConstDecl(std::unique_ptr<IdentifierExpr>& identifier, TokenType type, std::unique_ptr<Expr> expr):
         identifier(std::move(identifier)), type(type), expr(std::move(expr)) {}
     
-    virtual void accept(Visitor& visitor) { visitor.visit(*this); }
+    void accept(Visitor& visitor) { visitor.visit(*this); }
 
 };
 
@@ -70,6 +70,8 @@ struct ClassDecl: public Decl {
     std::unique_ptr<Block> body;
     ClassDecl(std::unique_ptr<IdentifierExpr>& identifier, std::unique_ptr<Block> body): identifier(std::move(identifier)), body(std::move(body)) {}
     
-    virtual void accept(Visitor& visitor) { visitor.visit(*this); }
+    void accept(Visitor& visitor) { visitor.visit(*this); }
 
 };
+
+#endif /* Decl_hpp */

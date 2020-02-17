@@ -1,7 +1,7 @@
 #include "SymbolTable.hpp"
 
-void SymbolTable::define(const std::string& identifier, TokenType type, Node*  value) {
-	std::pair<std::string, Symbol> entry {identifier, Symbol {identifier, type, value}};	
+void SymbolTable::define(const std::string& identifier, TokenType type, bool isConstant, Node*  value) {
+	std::pair<std::string, Symbol> entry {identifier, Symbol {identifier, type, isConstant, value}};	
 	
 	//Check if symbol is already declared
 	if (symbols.find(identifier) == symbols.end()) {
@@ -15,7 +15,7 @@ void SymbolTable::define(const std::string& identifier, TokenType type, Node*  v
 void SymbolTable::assign(const std::string& identifier, Node* value) {
     Symbol* node = get(identifier);
         
-    if (node->type == TokenType::constKey)
+    if (node->isConstant)
         throw "[ERROR] Trying to assign a value to constant '" + identifier + "'";
 
     node->value = value;

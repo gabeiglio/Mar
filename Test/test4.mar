@@ -1,6 +1,4 @@
 //In this file the scope will be tested
 
-class Node {
-    var data int
-    var nextNode Node
-}
+const name int = 2
+name = 1
