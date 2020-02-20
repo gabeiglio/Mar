@@ -19,7 +19,7 @@
 
 struct Decl: public Node {
     virtual ~Decl() {};
-    virtual void accept(Visitor& visitor) = 0;
+    virtual void accept(Visitor<void>& visitor) = 0;
 };
 
 struct ParamDecl: public Decl {
@@ -27,7 +27,7 @@ struct ParamDecl: public Decl {
     TokenType type;
     ParamDecl(std::unique_ptr<IdentifierExpr>& name, TokenType type): name(std::move(name)), type(type) {}
     
-    void accept(Visitor& visitor) { visitor.visit(*this); }
+    void accept(Visitor<void>& visitor) { visitor.visit(*this); }
 
 };
 
@@ -38,7 +38,7 @@ struct VarDecl: public Decl {
     VarDecl(std::unique_ptr<IdentifierExpr>& identifier, TokenType type, std::unique_ptr<Expr> expr):
         identifier(std::move(identifier)), type(type), expr(std::move(expr)) {}
     
-    void accept(Visitor& visitor) { visitor.visit(*this); }
+    void accept(Visitor<void>& visitor) { visitor.visit(*this); }
 
 };
 
@@ -49,7 +49,7 @@ struct ConstDecl: public Decl {
     ConstDecl(std::unique_ptr<IdentifierExpr>& identifier, TokenType type, std::unique_ptr<Expr> expr):
         identifier(std::move(identifier)), type(type), expr(std::move(expr)) {}
     
-    void accept(Visitor& visitor) { visitor.visit(*this); }
+    void accept(Visitor<void>& visitor) { visitor.visit(*this); }
 
 };
 
@@ -61,7 +61,7 @@ struct FuncDecl: public Decl {
     FuncDecl(std::unique_ptr<IdentifierExpr>& identifier, std::vector<std::unique_ptr<ParamDecl>>& params, TokenType type, std::unique_ptr<Block>& body):
         identifier(std::move(identifier)), params(std::move(params)), type(type), body(std::move(body)) {}
     
-    virtual void accept(Visitor& visitor) { visitor.visit(*this); }
+    virtual void accept(Visitor<void>& visitor) { visitor.visit(*this); }
 
 };
 
@@ -70,7 +70,7 @@ struct ClassDecl: public Decl {
     std::unique_ptr<Block> body;
     ClassDecl(std::unique_ptr<IdentifierExpr>& identifier, std::unique_ptr<Block> body): identifier(std::move(identifier)), body(std::move(body)) {}
     
-    void accept(Visitor& visitor) { visitor.visit(*this); }
+    void accept(Visitor<void>& visitor) { visitor.visit(*this); }
 
 };
 

@@ -96,18 +96,18 @@ CMakeFiles/Mar.dir/Parser/Parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mar.dir/Parser/Parser.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Parser.cpp -o CMakeFiles/Mar.dir/Parser/Parser.cpp.s
 
-CMakeFiles/Mar.dir/Evaluator/Evaluator.cpp.o: CMakeFiles/Mar.dir/flags.make
-CMakeFiles/Mar.dir/Evaluator/Evaluator.cpp.o: ../Evaluator/Evaluator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Mar.dir/Evaluator/Evaluator.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Mar.dir/Evaluator/Evaluator.cpp.o -c /Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Evaluator.cpp
+CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.o: CMakeFiles/Mar.dir/flags.make
+CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.o: ../Evaluator/ASTVisualizer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.o -c /Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/ASTVisualizer.cpp
 
-CMakeFiles/Mar.dir/Evaluator/Evaluator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Mar.dir/Evaluator/Evaluator.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Evaluator.cpp > CMakeFiles/Mar.dir/Evaluator/Evaluator.cpp.i
+CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/ASTVisualizer.cpp > CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.i
 
-CMakeFiles/Mar.dir/Evaluator/Evaluator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mar.dir/Evaluator/Evaluator.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Evaluator.cpp -o CMakeFiles/Mar.dir/Evaluator/Evaluator.cpp.s
+CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/ASTVisualizer.cpp -o CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.s
 
 CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.o: CMakeFiles/Mar.dir/flags.make
 CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.o: ../Sema/SemanticAnalyzer.cpp
@@ -140,7 +140,7 @@ Mar_OBJECTS = \
 "CMakeFiles/Mar.dir/main.cpp.o" \
 "CMakeFiles/Mar.dir/Lexer/Lexer.cpp.o" \
 "CMakeFiles/Mar.dir/Parser/Parser.cpp.o" \
-"CMakeFiles/Mar.dir/Evaluator/Evaluator.cpp.o" \
+"CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.o" \
 "CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.o" \
 "CMakeFiles/Mar.dir/Sema/SymbolTable/SymbolTable.cpp.o"
 
@@ -150,7 +150,7 @@ Mar_EXTERNAL_OBJECTS =
 Mar: CMakeFiles/Mar.dir/main.cpp.o
 Mar: CMakeFiles/Mar.dir/Lexer/Lexer.cpp.o
 Mar: CMakeFiles/Mar.dir/Parser/Parser.cpp.o
-Mar: CMakeFiles/Mar.dir/Evaluator/Evaluator.cpp.o
+Mar: CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.o
 Mar: CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.o
 Mar: CMakeFiles/Mar.dir/Sema/SymbolTable/SymbolTable.cpp.o
 Mar: CMakeFiles/Mar.dir/build.make

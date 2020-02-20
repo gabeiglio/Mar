@@ -11,7 +11,7 @@
 
 #include "Lexer/Lexer.hpp"
 #include "Parser/Parser.hpp"
-#include "Evaluator/Evaluator.hpp"
+#include "Evaluator/ASTVisualizer.hpp"
 #include "Sema/SemanticAnalyzer.hpp"
 #include "Sema/SymbolTable/SymbolTable.hpp"
 
@@ -29,10 +29,8 @@ void compile(T source) {
 		Parser parser(tokens);
 		std::vector<std::unique_ptr<Node>> nodes = parser.parse();
 
-		Evaluator eval;
-
-		for (unsigned long int i = 0; i < nodes.size(); i++)
-			eval.evaluate(nodes[i].get());
+		ASTVisualizer viual;
+        viual.evaluate(nodes);
         
         //Create global symbol table
         SymbolTable* enviroment = new SymbolTable();

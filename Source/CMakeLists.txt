@@ -20,7 +20,7 @@ add_executable(
 		${PARSER_DIR}/Nodes/Expr.hpp
  		${PARSER_DIR}/Nodes/Stmt.hpp
 		${PARSER_DIR}/Nodes/Decl.hpp
-	 	${EVAL_DIR}/Evaluator.cpp
+	 	${EVAL_DIR}/ASTVisualizer.cpp
         ${EVAL_DIR}/Visitor/Visitor.hpp
         ${SEMA_DIR}/SemanticAnalyzer.cpp
 		${SEMA_DIR}/SymbolTable/SymbolTable.cpp

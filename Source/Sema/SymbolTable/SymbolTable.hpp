@@ -34,6 +34,7 @@ public:
 	void define(const std::string& identifier, TokenType type, bool isConstant, Node* value);
     void assign(const std::string& identifier, Node* value);
     void setEnclosing(SymbolTable* enclosing);
+    SymbolTable* getEnclosing();
 };
 
 #endif

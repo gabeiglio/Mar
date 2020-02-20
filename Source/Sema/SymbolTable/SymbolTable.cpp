@@ -37,6 +37,11 @@ Symbol* SymbolTable::get(const std::string& identifier) {
 }
 
 void SymbolTable::setEnclosing(SymbolTable* enclosing) {
-    children.push_back(enclosing);
+    //Add to the pass enclosing one (the parent table)
+    enclosing->children.push_back(this);
     this->enclosing = enclosing;
+}
+
+SymbolTable* SymbolTable::getEnclosing() {
+    return enclosing;
 }

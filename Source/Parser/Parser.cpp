@@ -91,7 +91,7 @@ std::unique_ptr<Decl> Parser::parseConstDecl() {
     } else throw "[ERROR] Variable declaration must containt a valid identifier";
    
     //Check for type
-    if (tokens[index].isType()) {
+    if (tokens[index].isType() || !tokens[index].isType()) {
         type = tokens[index].type;
         index++;
     } else throw "[ERROR] Variable declaration must containt a valid type";

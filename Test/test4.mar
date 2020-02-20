@@ -1,4 +1,25 @@
 //In this file the scope will be tested
 
-const name int = 2
-name = 1
+class Person {
+    var name string
+    var age int
+    
+    //Init funcion for now
+    func init(name_ string, age_ int) void {
+        name = name_
+        age = age_
+    }
+}
+
+const gabriel Person = Person("Gabriel Igliozzi", 19)
+
+if true == true {
+    print("hola")
+}
+
+for i in identifier {
+    var dobNum double = 0.12321
+    if dobNum + 12 == 12.12321 {
+        dobNum = true
+    }
+}

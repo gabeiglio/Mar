@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Mar.dir/Evaluator/Evaluator.cpp.o"
+  "CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.o"
   "CMakeFiles/Mar.dir/Lexer/Lexer.cpp.o"
   "CMakeFiles/Mar.dir/Parser/Parser.cpp.o"
   "CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.o"

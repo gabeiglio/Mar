@@ -123,32 +123,32 @@ Mar/fast:
 	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/build
 .PHONY : Mar/fast
 
-Evaluator/Evaluator.o: Evaluator/Evaluator.cpp.o
+Evaluator/ASTVisualizer.o: Evaluator/ASTVisualizer.cpp.o
 
-.PHONY : Evaluator/Evaluator.o
+.PHONY : Evaluator/ASTVisualizer.o
 
 # target to build an object file
-Evaluator/Evaluator.cpp.o:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Evaluator/Evaluator.cpp.o
-.PHONY : Evaluator/Evaluator.cpp.o
+Evaluator/ASTVisualizer.cpp.o:
+	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.o
+.PHONY : Evaluator/ASTVisualizer.cpp.o
 
-Evaluator/Evaluator.i: Evaluator/Evaluator.cpp.i
+Evaluator/ASTVisualizer.i: Evaluator/ASTVisualizer.cpp.i
 
-.PHONY : Evaluator/Evaluator.i
+.PHONY : Evaluator/ASTVisualizer.i
 
 # target to preprocess a source file
-Evaluator/Evaluator.cpp.i:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Evaluator/Evaluator.cpp.i
-.PHONY : Evaluator/Evaluator.cpp.i
+Evaluator/ASTVisualizer.cpp.i:
+	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.i
+.PHONY : Evaluator/ASTVisualizer.cpp.i
 
-Evaluator/Evaluator.s: Evaluator/Evaluator.cpp.s
+Evaluator/ASTVisualizer.s: Evaluator/ASTVisualizer.cpp.s
 
-.PHONY : Evaluator/Evaluator.s
+.PHONY : Evaluator/ASTVisualizer.s
 
 # target to generate assembly for a file
-Evaluator/Evaluator.cpp.s:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Evaluator/Evaluator.cpp.s
-.PHONY : Evaluator/Evaluator.cpp.s
+Evaluator/ASTVisualizer.cpp.s:
+	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.s
+.PHONY : Evaluator/ASTVisualizer.cpp.s
 
 Lexer/Lexer.o: Lexer/Lexer.cpp.o
 
@@ -294,9 +294,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Mar"
-	@echo "... Evaluator/Evaluator.o"
-	@echo "... Evaluator/Evaluator.i"
-	@echo "... Evaluator/Evaluator.s"
+	@echo "... Evaluator/ASTVisualizer.o"
+	@echo "... Evaluator/ASTVisualizer.i"
+	@echo "... Evaluator/ASTVisualizer.s"
 	@echo "... Lexer/Lexer.o"
 	@echo "... Lexer/Lexer.i"
 	@echo "... Lexer/Lexer.s"

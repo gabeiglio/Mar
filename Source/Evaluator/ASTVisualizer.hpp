@@ -1,25 +1,25 @@
+//
+//  Evaluator.hpp
+//  Mar
+//
+//  Created by Gabriel Igliozzi on 11/25/19.
+//  Copyright © 2019 Gabriel Igliozzi. All rights reserved.
+//
 
-#ifndef SemanticAnalyzer_hpp
-#define SemanticAnalyzer_hpp
+#ifndef ASTVisualizer_hpp
+#define ASTVisualizer_hpp
 
-#import <vector>
-
-#include "/Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Token.hpp"
-#include "/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Decl.hpp"
-#include "/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Expr.hpp"
 #include "/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Stmt.hpp"
+#include "/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Nodes/Decl.hpp"
 #include "/Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Visitor/Visitor.hpp"
-#include "SymbolTable/SymbolTable.hpp"
+#include <iostream>
 
-#pragma once
 
-class SemanticAnalyzer: public Visitor<void> {
+class ASTVisualizer: public Visitor<void> {
 private:
-    std::vector<std::unique_ptr<Node>> nodes;
+    int level = 1;
+    std::string scope = "|-- ";
     
-    //Pointer of the Symbol Table
-    SymbolTable* enviroment;
-
     //Expr
     void visit(IdentifierExpr& expr) override;
     void visit(IntegerExpr& expr) override;
@@ -49,14 +49,15 @@ private:
     void visit(FuncDecl& decl) override;
     void visit(ClassDecl& decl) override;
     
-    //Helper Scoping methods
-    SymbolTable* getEnviroment();
-    void enterScope(SymbolTable* enclosing);
-    void exitScope();
+    //Inner evaluate method
+    void eval(Node& node);
+
+    //Helper fucntion to print tabs
+    template <typename T>
+    void print(T object, bool newLine);
     
 public:
-    void performAnalysis(SymbolTable* enviroment);
-    SemanticAnalyzer(std::vector<std::unique_ptr<Node>>& nodes): nodes(std::move(nodes)) {}
+    void evaluate(std::vector<std::unique_ptr<Node>>& nodes);
 };
 
-#endif
+#endif /* Evaluator_hpp */
