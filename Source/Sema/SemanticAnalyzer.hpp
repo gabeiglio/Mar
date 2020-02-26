@@ -54,6 +54,9 @@ private:
     void enterScope(SymbolTable* enclosing);
     void exitScope();
     
+    //Helper function
+    void innerCheck(Node& node);
+    
 public:
     void performAnalysis(SymbolTable* enviroment);
     SemanticAnalyzer(std::vector<std::unique_ptr<Node>>& nodes): nodes(std::move(nodes)) {}

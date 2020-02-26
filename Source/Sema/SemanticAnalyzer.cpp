@@ -1,4 +1,5 @@
 #include "SemanticAnalyzer.hpp"
+#include <iostream>
 
 void SemanticAnalyzer::performAnalysis(SymbolTable* enviroment) {
     
@@ -9,24 +10,38 @@ void SemanticAnalyzer::performAnalysis(SymbolTable* enviroment) {
         nodes[index]->accept(*this);
 }
 
+void SemanticAnalyzer::innerCheck(Node& node) {
+    node.accept(*this);
+}
+
+//Block
+void SemanticAnalyzer::visit(Block& block) {
+    enterScope(enviroment);
+    //Loop through all the nodes
+    for (unsigned int index = 0; index < block.nodes.size(); index++)
+        innerCheck(*block.nodes[index]);
+    exitScope();
+}
+
+//Expr
 void SemanticAnalyzer::visit(IdentifierExpr& expr) {
-    
+    getEnviroment()->get(expr.lexeme);
 }
 
 void SemanticAnalyzer::visit(IntegerExpr& expr) {
-
+    
 }
 
 void SemanticAnalyzer::visit(DoubleExpr& expr) {
-    
+   
 }
 
 void SemanticAnalyzer::visit(StringExpr& expr) {
-    
+   
 }
 
 void SemanticAnalyzer::visit(CharExpr& expr) {
-    
+
 }
 
 void SemanticAnalyzer::visit(BoolExpr& expr) {
@@ -34,15 +49,15 @@ void SemanticAnalyzer::visit(BoolExpr& expr) {
 }
 
 void SemanticAnalyzer::visit(UnaryExpr& expr) {
-    
+    innerCheck(*expr.expr);
 }
 
 void SemanticAnalyzer::visit(BinaryOpExpr& expr) {
-    
+
 }
 
 void SemanticAnalyzer::visit(CallExpr& expr) {
-    
+
 }
 
 void SemanticAnalyzer::visit(AssignExpr& expr) {
@@ -56,30 +71,22 @@ void SemanticAnalyzer::visit(ExprStmt& stmt) {
 }
 
 void SemanticAnalyzer::visit(IfStmt& stmt) {
-    visit(*stmt.block);
+    innerCheck(*stmt.block);
 }
 
 void SemanticAnalyzer::visit(WhileStmt& stmt) {
-    visit(*stmt.block);
+    innerCheck(*stmt.block);
 }
 
 void SemanticAnalyzer::visit(ForInStmt& stmt) {
-    visit(*stmt.block);
+    innerCheck(*stmt.block);
+
 }
 
 void SemanticAnalyzer::visit(ReturnStmt& stmt) {
-    
+    innerCheck(*stmt.expr);
 }
    
-//Block
-void SemanticAnalyzer::visit(Block& block) {
-    enterScope(enviroment);
-    //Loop through all the nodes
-    for (unsigned int index = 0; index < block.nodes.size(); index++)
-        block.nodes[index]->accept(*this);
-    exitScope();
-}
-
 //Decl
 void SemanticAnalyzer::visit(ParamDecl& decl) {
     //add parameters to enviroment
@@ -94,6 +101,9 @@ void SemanticAnalyzer::visit(VarDecl& decl) {
         //Define to symbol table
         getEnviroment()->define(identifier->lexeme, decl.type, false, decl.expr.get());
     }
+    
+    //Check the expression
+    //if (decl.expr != nullptr) innerCheck(*decl.expr);
 }
 
 void SemanticAnalyzer::visit(ConstDecl& decl) {
@@ -102,6 +112,9 @@ void SemanticAnalyzer::visit(ConstDecl& decl) {
         //Define to symbol table
         getEnviroment()->define(identifier->lexeme, decl.type, true, decl.expr.get());
     }
+    
+    //Check the expression
+    //if (decl.expr != nullptr) innerCheck(*decl.expr);
 }
 
 void SemanticAnalyzer::visit(FuncDecl& decl) {
@@ -110,9 +123,9 @@ void SemanticAnalyzer::visit(FuncDecl& decl) {
         getEnviroment()->define(identifier->lexeme, decl.type, true, nullptr);
 
     for (std::unique_ptr<ParamDecl>& node: decl.params)
-        visit(*node);
+        innerCheck(*node);
     
-    visit(*decl.body);
+    innerCheck(*decl.body);
 }
 
 void SemanticAnalyzer::visit(ClassDecl& decl) {
@@ -120,7 +133,7 @@ void SemanticAnalyzer::visit(ClassDecl& decl) {
     if (IdentifierExpr* identifier = dynamic_cast<IdentifierExpr*>(decl.identifier.get()))
         getEnviroment()->define(identifier->lexeme, TokenType::classKey, false, nullptr);
     
-    visit(*decl.body);
+    innerCheck(*decl.body);
 }
 
 /* ------- Helper Scoping Methods --------*/

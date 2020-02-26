@@ -60,17 +60,7 @@ void ASTVisualizer::visit(BinaryOpExpr& expr) {
 }
 
 void ASTVisualizer::visit(CallExpr& expr) {
-//    eval(*expr.identifier);
-//    print("(", false);
-//
-//    for (unsigned int index = 0; index < expr.arguments.size(); index++) {
-//        if (index < expr.arguments.size() - 1)
-//            print(", ", false);
-//
-//        eval(*expr.arguments[index]);
-//    }
-//
-//    print(")", false);
+
 }
 
 void ASTVisualizer::visit(AssignExpr& expr) {

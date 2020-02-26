@@ -1,0 +1,4 @@
+//This file will test the segmentation fault that is happening somewhere in the semantic analysis phase
+ if true {
+    var name string = "Gabriel"
+}

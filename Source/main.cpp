@@ -21,20 +21,19 @@ void compile(T source) {
 		Lexer lexer(source);
 		std::vector<Token> tokens = lexer.tokenize();
 		
-		std::cout << "\n***** Tokens List: *****\n \n"; 
-		for (Token token: tokens)
-			std::cout << " " << token.lexeme << " " << token.type << std::endl;
+//		std::cout << "\n***** Tokens List: *****\n \n"; 
+//		for (Token token: tokens)
+//			std::cout << " " << token.lexeme << " " << token.type << std::endl;
 
 		std::cout << "\n***** Abstract Syntax Tree *****\n\n";
 		Parser parser(tokens);
 		std::vector<std::unique_ptr<Node>> nodes = parser.parse();
-
-		ASTVisualizer viual;
-        viual.evaluate(nodes);
         
+		ASTVisualizer visual;
+        visual.evaluate(nodes);
+
         //Create global symbol table
         SymbolTable* enviroment = new SymbolTable();
-        
         SemanticAnalyzer sema(nodes);
         sema.performAnalysis(enviroment);
         
