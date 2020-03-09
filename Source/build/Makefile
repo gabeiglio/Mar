@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Mar
+# Target rules for targets named mar
 
 # Build rule for target.
-Mar: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Mar
-.PHONY : Mar
+mar: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mar
+.PHONY : mar
 
 # fast build rule for target.
-Mar/fast:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/build
-.PHONY : Mar/fast
+mar/fast:
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/build
+.PHONY : mar/fast
 
 Evaluator/ASTVisualizer.o: Evaluator/ASTVisualizer.cpp.o
 
@@ -129,7 +129,7 @@ Evaluator/ASTVisualizer.o: Evaluator/ASTVisualizer.cpp.o
 
 # target to build an object file
 Evaluator/ASTVisualizer.cpp.o:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.o
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/Evaluator/ASTVisualizer.cpp.o
 .PHONY : Evaluator/ASTVisualizer.cpp.o
 
 Evaluator/ASTVisualizer.i: Evaluator/ASTVisualizer.cpp.i
@@ -138,7 +138,7 @@ Evaluator/ASTVisualizer.i: Evaluator/ASTVisualizer.cpp.i
 
 # target to preprocess a source file
 Evaluator/ASTVisualizer.cpp.i:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.i
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/Evaluator/ASTVisualizer.cpp.i
 .PHONY : Evaluator/ASTVisualizer.cpp.i
 
 Evaluator/ASTVisualizer.s: Evaluator/ASTVisualizer.cpp.s
@@ -147,7 +147,7 @@ Evaluator/ASTVisualizer.s: Evaluator/ASTVisualizer.cpp.s
 
 # target to generate assembly for a file
 Evaluator/ASTVisualizer.cpp.s:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.s
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/Evaluator/ASTVisualizer.cpp.s
 .PHONY : Evaluator/ASTVisualizer.cpp.s
 
 Lexer/Lexer.o: Lexer/Lexer.cpp.o
@@ -156,7 +156,7 @@ Lexer/Lexer.o: Lexer/Lexer.cpp.o
 
 # target to build an object file
 Lexer/Lexer.cpp.o:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Lexer/Lexer.cpp.o
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/Lexer/Lexer.cpp.o
 .PHONY : Lexer/Lexer.cpp.o
 
 Lexer/Lexer.i: Lexer/Lexer.cpp.i
@@ -165,7 +165,7 @@ Lexer/Lexer.i: Lexer/Lexer.cpp.i
 
 # target to preprocess a source file
 Lexer/Lexer.cpp.i:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Lexer/Lexer.cpp.i
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/Lexer/Lexer.cpp.i
 .PHONY : Lexer/Lexer.cpp.i
 
 Lexer/Lexer.s: Lexer/Lexer.cpp.s
@@ -174,7 +174,7 @@ Lexer/Lexer.s: Lexer/Lexer.cpp.s
 
 # target to generate assembly for a file
 Lexer/Lexer.cpp.s:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Lexer/Lexer.cpp.s
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/Lexer/Lexer.cpp.s
 .PHONY : Lexer/Lexer.cpp.s
 
 Parser/Parser.o: Parser/Parser.cpp.o
@@ -183,7 +183,7 @@ Parser/Parser.o: Parser/Parser.cpp.o
 
 # target to build an object file
 Parser/Parser.cpp.o:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Parser/Parser.cpp.o
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/Parser/Parser.cpp.o
 .PHONY : Parser/Parser.cpp.o
 
 Parser/Parser.i: Parser/Parser.cpp.i
@@ -192,7 +192,7 @@ Parser/Parser.i: Parser/Parser.cpp.i
 
 # target to preprocess a source file
 Parser/Parser.cpp.i:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Parser/Parser.cpp.i
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/Parser/Parser.cpp.i
 .PHONY : Parser/Parser.cpp.i
 
 Parser/Parser.s: Parser/Parser.cpp.s
@@ -201,7 +201,7 @@ Parser/Parser.s: Parser/Parser.cpp.s
 
 # target to generate assembly for a file
 Parser/Parser.cpp.s:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Parser/Parser.cpp.s
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/Parser/Parser.cpp.s
 .PHONY : Parser/Parser.cpp.s
 
 Sema/SemanticAnalyzer.o: Sema/SemanticAnalyzer.cpp.o
@@ -210,7 +210,7 @@ Sema/SemanticAnalyzer.o: Sema/SemanticAnalyzer.cpp.o
 
 # target to build an object file
 Sema/SemanticAnalyzer.cpp.o:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.o
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/Sema/SemanticAnalyzer.cpp.o
 .PHONY : Sema/SemanticAnalyzer.cpp.o
 
 Sema/SemanticAnalyzer.i: Sema/SemanticAnalyzer.cpp.i
@@ -219,7 +219,7 @@ Sema/SemanticAnalyzer.i: Sema/SemanticAnalyzer.cpp.i
 
 # target to preprocess a source file
 Sema/SemanticAnalyzer.cpp.i:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.i
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/Sema/SemanticAnalyzer.cpp.i
 .PHONY : Sema/SemanticAnalyzer.cpp.i
 
 Sema/SemanticAnalyzer.s: Sema/SemanticAnalyzer.cpp.s
@@ -228,7 +228,7 @@ Sema/SemanticAnalyzer.s: Sema/SemanticAnalyzer.cpp.s
 
 # target to generate assembly for a file
 Sema/SemanticAnalyzer.cpp.s:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.s
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/Sema/SemanticAnalyzer.cpp.s
 .PHONY : Sema/SemanticAnalyzer.cpp.s
 
 Sema/SymbolTable/SymbolTable.o: Sema/SymbolTable/SymbolTable.cpp.o
@@ -237,7 +237,7 @@ Sema/SymbolTable/SymbolTable.o: Sema/SymbolTable/SymbolTable.cpp.o
 
 # target to build an object file
 Sema/SymbolTable/SymbolTable.cpp.o:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Sema/SymbolTable/SymbolTable.cpp.o
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/Sema/SymbolTable/SymbolTable.cpp.o
 .PHONY : Sema/SymbolTable/SymbolTable.cpp.o
 
 Sema/SymbolTable/SymbolTable.i: Sema/SymbolTable/SymbolTable.cpp.i
@@ -246,7 +246,7 @@ Sema/SymbolTable/SymbolTable.i: Sema/SymbolTable/SymbolTable.cpp.i
 
 # target to preprocess a source file
 Sema/SymbolTable/SymbolTable.cpp.i:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Sema/SymbolTable/SymbolTable.cpp.i
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/Sema/SymbolTable/SymbolTable.cpp.i
 .PHONY : Sema/SymbolTable/SymbolTable.cpp.i
 
 Sema/SymbolTable/SymbolTable.s: Sema/SymbolTable/SymbolTable.cpp.s
@@ -255,7 +255,7 @@ Sema/SymbolTable/SymbolTable.s: Sema/SymbolTable/SymbolTable.cpp.s
 
 # target to generate assembly for a file
 Sema/SymbolTable/SymbolTable.cpp.s:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/Sema/SymbolTable/SymbolTable.cpp.s
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/Sema/SymbolTable/SymbolTable.cpp.s
 .PHONY : Sema/SymbolTable/SymbolTable.cpp.s
 
 main.o: main.cpp.o
@@ -264,7 +264,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -273,7 +273,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -282,7 +282,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -293,7 +293,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... Mar"
+	@echo "... mar"
 	@echo "... Evaluator/ASTVisualizer.o"
 	@echo "... Evaluator/ASTVisualizer.i"
 	@echo "... Evaluator/ASTVisualizer.s"

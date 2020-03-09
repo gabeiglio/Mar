@@ -12,7 +12,7 @@ set(EVAL_DIR Evaluator)
 set(SEMA_DIR Sema)
 
 add_executable( 
-		Mar
+		mar
 		main.cpp
 		${LEXER_DIR}/Lexer.cpp
 		${LEXER_DIR}/Token.hpp
@@ -25,4 +25,3 @@ add_executable(
         ${SEMA_DIR}/SemanticAnalyzer.cpp
 		${SEMA_DIR}/SymbolTable/SymbolTable.cpp
 )
-		

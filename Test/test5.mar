@@ -1,4 +1,28 @@
-//This file will test the segmentation fault that is happening somewhere in the semantic analysis phase
- if true {
-    var name string = "Gabriel"
+/* This is a test file that will test everything */
+
+class Person {
+    var name string
+    var age int
+    
+    func override(name_ string, age_ int) void {
+        name = name_
+        age = age_
+    }
+    
+    func isOlder() bool {
+        if age >= 10 && age <= 19 {
+            return true
+        }
+        return false
+    }
 }
+
+const gabriel Person = Person("Gabriel Igliozzi", 19)
+
+//var name string = lastname
+
+func print(msg string) string {
+    return msg
+}
+
+

@@ -7,6 +7,9 @@ var number int = 10
  ignored
 */
 
+//Create print function so the compiler does not yell at us (for now)
+func print(msg string) void {}
+
 //Initialize variables
 var name string = "Gabriel"
 var lastName string = "Igliozzi"

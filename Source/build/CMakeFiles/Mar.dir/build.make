@@ -49,125 +49,125 @@ CMAKE_SOURCE_DIR = /Users/gabeiglio/Desktop/Developer/Mar/Source
 CMAKE_BINARY_DIR = /Users/gabeiglio/Desktop/Developer/Mar/Source/build
 
 # Include any dependencies generated for this target.
-include CMakeFiles/Mar.dir/depend.make
+include CMakeFiles/mar.dir/depend.make
 
 # Include the progress variables for this target.
-include CMakeFiles/Mar.dir/progress.make
+include CMakeFiles/mar.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include CMakeFiles/Mar.dir/flags.make
+include CMakeFiles/mar.dir/flags.make
 
-CMakeFiles/Mar.dir/main.cpp.o: CMakeFiles/Mar.dir/flags.make
-CMakeFiles/Mar.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Mar.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Mar.dir/main.cpp.o -c /Users/gabeiglio/Desktop/Developer/Mar/Source/main.cpp
+CMakeFiles/mar.dir/main.cpp.o: CMakeFiles/mar.dir/flags.make
+CMakeFiles/mar.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mar.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mar.dir/main.cpp.o -c /Users/gabeiglio/Desktop/Developer/Mar/Source/main.cpp
 
-CMakeFiles/Mar.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Mar.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gabeiglio/Desktop/Developer/Mar/Source/main.cpp > CMakeFiles/Mar.dir/main.cpp.i
+CMakeFiles/mar.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mar.dir/main.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gabeiglio/Desktop/Developer/Mar/Source/main.cpp > CMakeFiles/mar.dir/main.cpp.i
 
-CMakeFiles/Mar.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mar.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gabeiglio/Desktop/Developer/Mar/Source/main.cpp -o CMakeFiles/Mar.dir/main.cpp.s
+CMakeFiles/mar.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mar.dir/main.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gabeiglio/Desktop/Developer/Mar/Source/main.cpp -o CMakeFiles/mar.dir/main.cpp.s
 
-CMakeFiles/Mar.dir/Lexer/Lexer.cpp.o: CMakeFiles/Mar.dir/flags.make
-CMakeFiles/Mar.dir/Lexer/Lexer.cpp.o: ../Lexer/Lexer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Mar.dir/Lexer/Lexer.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Mar.dir/Lexer/Lexer.cpp.o -c /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.cpp
+CMakeFiles/mar.dir/Lexer/Lexer.cpp.o: CMakeFiles/mar.dir/flags.make
+CMakeFiles/mar.dir/Lexer/Lexer.cpp.o: ../Lexer/Lexer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/mar.dir/Lexer/Lexer.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mar.dir/Lexer/Lexer.cpp.o -c /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.cpp
 
-CMakeFiles/Mar.dir/Lexer/Lexer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Mar.dir/Lexer/Lexer.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.cpp > CMakeFiles/Mar.dir/Lexer/Lexer.cpp.i
+CMakeFiles/mar.dir/Lexer/Lexer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mar.dir/Lexer/Lexer.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.cpp > CMakeFiles/mar.dir/Lexer/Lexer.cpp.i
 
-CMakeFiles/Mar.dir/Lexer/Lexer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mar.dir/Lexer/Lexer.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.cpp -o CMakeFiles/Mar.dir/Lexer/Lexer.cpp.s
+CMakeFiles/mar.dir/Lexer/Lexer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mar.dir/Lexer/Lexer.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.cpp -o CMakeFiles/mar.dir/Lexer/Lexer.cpp.s
 
-CMakeFiles/Mar.dir/Parser/Parser.cpp.o: CMakeFiles/Mar.dir/flags.make
-CMakeFiles/Mar.dir/Parser/Parser.cpp.o: ../Parser/Parser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Mar.dir/Parser/Parser.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Mar.dir/Parser/Parser.cpp.o -c /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Parser.cpp
+CMakeFiles/mar.dir/Parser/Parser.cpp.o: CMakeFiles/mar.dir/flags.make
+CMakeFiles/mar.dir/Parser/Parser.cpp.o: ../Parser/Parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/mar.dir/Parser/Parser.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mar.dir/Parser/Parser.cpp.o -c /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Parser.cpp
 
-CMakeFiles/Mar.dir/Parser/Parser.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Mar.dir/Parser/Parser.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Parser.cpp > CMakeFiles/Mar.dir/Parser/Parser.cpp.i
+CMakeFiles/mar.dir/Parser/Parser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mar.dir/Parser/Parser.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Parser.cpp > CMakeFiles/mar.dir/Parser/Parser.cpp.i
 
-CMakeFiles/Mar.dir/Parser/Parser.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mar.dir/Parser/Parser.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Parser.cpp -o CMakeFiles/Mar.dir/Parser/Parser.cpp.s
+CMakeFiles/mar.dir/Parser/Parser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mar.dir/Parser/Parser.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Parser.cpp -o CMakeFiles/mar.dir/Parser/Parser.cpp.s
 
-CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.o: CMakeFiles/Mar.dir/flags.make
-CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.o: ../Evaluator/ASTVisualizer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.o -c /Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/ASTVisualizer.cpp
+CMakeFiles/mar.dir/Evaluator/ASTVisualizer.cpp.o: CMakeFiles/mar.dir/flags.make
+CMakeFiles/mar.dir/Evaluator/ASTVisualizer.cpp.o: ../Evaluator/ASTVisualizer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/mar.dir/Evaluator/ASTVisualizer.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mar.dir/Evaluator/ASTVisualizer.cpp.o -c /Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/ASTVisualizer.cpp
 
-CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/ASTVisualizer.cpp > CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.i
+CMakeFiles/mar.dir/Evaluator/ASTVisualizer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mar.dir/Evaluator/ASTVisualizer.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/ASTVisualizer.cpp > CMakeFiles/mar.dir/Evaluator/ASTVisualizer.cpp.i
 
-CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/ASTVisualizer.cpp -o CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.s
+CMakeFiles/mar.dir/Evaluator/ASTVisualizer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mar.dir/Evaluator/ASTVisualizer.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/ASTVisualizer.cpp -o CMakeFiles/mar.dir/Evaluator/ASTVisualizer.cpp.s
 
-CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.o: CMakeFiles/Mar.dir/flags.make
-CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.o: ../Sema/SemanticAnalyzer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.o -c /Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SemanticAnalyzer.cpp
+CMakeFiles/mar.dir/Sema/SemanticAnalyzer.cpp.o: CMakeFiles/mar.dir/flags.make
+CMakeFiles/mar.dir/Sema/SemanticAnalyzer.cpp.o: ../Sema/SemanticAnalyzer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/mar.dir/Sema/SemanticAnalyzer.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mar.dir/Sema/SemanticAnalyzer.cpp.o -c /Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SemanticAnalyzer.cpp
 
-CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SemanticAnalyzer.cpp > CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.i
+CMakeFiles/mar.dir/Sema/SemanticAnalyzer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mar.dir/Sema/SemanticAnalyzer.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SemanticAnalyzer.cpp > CMakeFiles/mar.dir/Sema/SemanticAnalyzer.cpp.i
 
-CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SemanticAnalyzer.cpp -o CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.s
+CMakeFiles/mar.dir/Sema/SemanticAnalyzer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mar.dir/Sema/SemanticAnalyzer.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SemanticAnalyzer.cpp -o CMakeFiles/mar.dir/Sema/SemanticAnalyzer.cpp.s
 
-CMakeFiles/Mar.dir/Sema/SymbolTable/SymbolTable.cpp.o: CMakeFiles/Mar.dir/flags.make
-CMakeFiles/Mar.dir/Sema/SymbolTable/SymbolTable.cpp.o: ../Sema/SymbolTable/SymbolTable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Mar.dir/Sema/SymbolTable/SymbolTable.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Mar.dir/Sema/SymbolTable/SymbolTable.cpp.o -c /Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SymbolTable/SymbolTable.cpp
+CMakeFiles/mar.dir/Sema/SymbolTable/SymbolTable.cpp.o: CMakeFiles/mar.dir/flags.make
+CMakeFiles/mar.dir/Sema/SymbolTable/SymbolTable.cpp.o: ../Sema/SymbolTable/SymbolTable.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/mar.dir/Sema/SymbolTable/SymbolTable.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mar.dir/Sema/SymbolTable/SymbolTable.cpp.o -c /Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SymbolTable/SymbolTable.cpp
 
-CMakeFiles/Mar.dir/Sema/SymbolTable/SymbolTable.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Mar.dir/Sema/SymbolTable/SymbolTable.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SymbolTable/SymbolTable.cpp > CMakeFiles/Mar.dir/Sema/SymbolTable/SymbolTable.cpp.i
+CMakeFiles/mar.dir/Sema/SymbolTable/SymbolTable.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mar.dir/Sema/SymbolTable/SymbolTable.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SymbolTable/SymbolTable.cpp > CMakeFiles/mar.dir/Sema/SymbolTable/SymbolTable.cpp.i
 
-CMakeFiles/Mar.dir/Sema/SymbolTable/SymbolTable.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Mar.dir/Sema/SymbolTable/SymbolTable.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SymbolTable/SymbolTable.cpp -o CMakeFiles/Mar.dir/Sema/SymbolTable/SymbolTable.cpp.s
+CMakeFiles/mar.dir/Sema/SymbolTable/SymbolTable.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mar.dir/Sema/SymbolTable/SymbolTable.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SymbolTable/SymbolTable.cpp -o CMakeFiles/mar.dir/Sema/SymbolTable/SymbolTable.cpp.s
 
-# Object files for target Mar
-Mar_OBJECTS = \
-"CMakeFiles/Mar.dir/main.cpp.o" \
-"CMakeFiles/Mar.dir/Lexer/Lexer.cpp.o" \
-"CMakeFiles/Mar.dir/Parser/Parser.cpp.o" \
-"CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.o" \
-"CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.o" \
-"CMakeFiles/Mar.dir/Sema/SymbolTable/SymbolTable.cpp.o"
+# Object files for target mar
+mar_OBJECTS = \
+"CMakeFiles/mar.dir/main.cpp.o" \
+"CMakeFiles/mar.dir/Lexer/Lexer.cpp.o" \
+"CMakeFiles/mar.dir/Parser/Parser.cpp.o" \
+"CMakeFiles/mar.dir/Evaluator/ASTVisualizer.cpp.o" \
+"CMakeFiles/mar.dir/Sema/SemanticAnalyzer.cpp.o" \
+"CMakeFiles/mar.dir/Sema/SymbolTable/SymbolTable.cpp.o"
 
-# External object files for target Mar
-Mar_EXTERNAL_OBJECTS =
+# External object files for target mar
+mar_EXTERNAL_OBJECTS =
 
-Mar: CMakeFiles/Mar.dir/main.cpp.o
-Mar: CMakeFiles/Mar.dir/Lexer/Lexer.cpp.o
-Mar: CMakeFiles/Mar.dir/Parser/Parser.cpp.o
-Mar: CMakeFiles/Mar.dir/Evaluator/ASTVisualizer.cpp.o
-Mar: CMakeFiles/Mar.dir/Sema/SemanticAnalyzer.cpp.o
-Mar: CMakeFiles/Mar.dir/Sema/SymbolTable/SymbolTable.cpp.o
-Mar: CMakeFiles/Mar.dir/build.make
-Mar: CMakeFiles/Mar.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Mar"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Mar.dir/link.txt --verbose=$(VERBOSE)
+mar: CMakeFiles/mar.dir/main.cpp.o
+mar: CMakeFiles/mar.dir/Lexer/Lexer.cpp.o
+mar: CMakeFiles/mar.dir/Parser/Parser.cpp.o
+mar: CMakeFiles/mar.dir/Evaluator/ASTVisualizer.cpp.o
+mar: CMakeFiles/mar.dir/Sema/SemanticAnalyzer.cpp.o
+mar: CMakeFiles/mar.dir/Sema/SymbolTable/SymbolTable.cpp.o
+mar: CMakeFiles/mar.dir/build.make
+mar: CMakeFiles/mar.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable mar"
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mar.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/Mar.dir/build: Mar
+CMakeFiles/mar.dir/build: mar
 
-.PHONY : CMakeFiles/Mar.dir/build
+.PHONY : CMakeFiles/mar.dir/build
 
-CMakeFiles/Mar.dir/clean:
-	$(CMAKE_COMMAND) -P CMakeFiles/Mar.dir/cmake_clean.cmake
-.PHONY : CMakeFiles/Mar.dir/clean
+CMakeFiles/mar.dir/clean:
+	$(CMAKE_COMMAND) -P CMakeFiles/mar.dir/cmake_clean.cmake
+.PHONY : CMakeFiles/mar.dir/clean
 
-CMakeFiles/Mar.dir/depend:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/Source/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/gabeiglio/Desktop/Developer/Mar/Source /Users/gabeiglio/Desktop/Developer/Mar/Source /Users/gabeiglio/Desktop/Developer/Mar/Source/build /Users/gabeiglio/Desktop/Developer/Mar/Source/build /Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles/Mar.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : CMakeFiles/Mar.dir/depend
+CMakeFiles/mar.dir/depend:
+	cd /Users/gabeiglio/Desktop/Developer/Mar/Source/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/gabeiglio/Desktop/Developer/Mar/Source /Users/gabeiglio/Desktop/Developer/Mar/Source /Users/gabeiglio/Desktop/Developer/Mar/Source/build /Users/gabeiglio/Desktop/Developer/Mar/Source/build /Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles/mar.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : CMakeFiles/mar.dir/depend
 

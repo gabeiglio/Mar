@@ -53,12 +53,12 @@ CMAKE_BINARY_DIR = /Users/gabeiglio/Desktop/Developer/Mar/Source/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Mar.dir/all
+all: CMakeFiles/mar.dir/all
 
 .PHONY : all
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Mar.dir/clean
+clean: CMakeFiles/mar.dir/clean
 
 .PHONY : clean
 
@@ -68,31 +68,31 @@ preinstall:
 .PHONY : preinstall
 
 #=============================================================================
-# Target rules for target CMakeFiles/Mar.dir
+# Target rules for target CMakeFiles/mar.dir
 
 # All Build rule for target.
-CMakeFiles/Mar.dir/all:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/depend
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Mar"
-.PHONY : CMakeFiles/Mar.dir/all
+CMakeFiles/mar.dir/all:
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/depend
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target mar"
+.PHONY : CMakeFiles/mar.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Mar.dir/rule: cmake_check_build_system
+CMakeFiles/mar.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles 7
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Mar.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/mar.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles 0
-.PHONY : CMakeFiles/Mar.dir/rule
+.PHONY : CMakeFiles/mar.dir/rule
 
 # Convenience name for target.
-Mar: CMakeFiles/Mar.dir/rule
+mar: CMakeFiles/mar.dir/rule
 
-.PHONY : Mar
+.PHONY : mar
 
 # clean rule for target.
-CMakeFiles/Mar.dir/clean:
-	$(MAKE) -f CMakeFiles/Mar.dir/build.make CMakeFiles/Mar.dir/clean
-.PHONY : CMakeFiles/Mar.dir/clean
+CMakeFiles/mar.dir/clean:
+	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/clean
+.PHONY : CMakeFiles/mar.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

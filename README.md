@@ -32,4 +32,4 @@ Mar will be a static, compiled, high-level language inspired by Swift
 
 ## What I am doing now?
 
-Now as Im building the Grammar I am also researching how to implement input buffering with buffer pairs, I know the theory, but I have no idea how to implement it 😅.
+Implementing the type checker

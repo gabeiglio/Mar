@@ -21,9 +21,9 @@ void compile(T source) {
 		Lexer lexer(source);
 		std::vector<Token> tokens = lexer.tokenize();
 		
-//		std::cout << "\n***** Tokens List: *****\n \n"; 
-//		for (Token token: tokens)
-//			std::cout << " " << token.lexeme << " " << token.type << std::endl;
+		std::cout << "\n***** Tokens List: *****\n \n"; 
+		for (Token token: tokens)
+			std::cout << " " << token.lexeme << " " << token.type << std::endl;
 
 		std::cout << "\n***** Abstract Syntax Tree *****\n\n";
 		Parser parser(tokens);
