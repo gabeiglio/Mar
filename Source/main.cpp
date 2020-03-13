@@ -14,6 +14,7 @@
 #include "Evaluator/ASTVisualizer.hpp"
 #include "Sema/SemanticAnalyzer.hpp"
 #include "Sema/SymbolTable/SymbolTable.hpp"
+#include "Codegen/Codegen.hpp"
 
 template<typename T>
 void compile(T source) {
@@ -36,6 +37,10 @@ void compile(T source) {
         SymbolTable* enviroment = new SymbolTable();
         SemanticAnalyzer sema(nodes);
         sema.performAnalysis(enviroment);
+        
+        //Code generation
+        Codegen codegen(nodes, enviroment);
+        
         
     } catch (const char* error) {
         std::cerr << error << std::endl;

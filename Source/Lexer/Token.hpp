@@ -21,7 +21,7 @@ enum TokenType {
     openParen, closeParen, comma, point, openBrace, closeBrace, openBracket, closeBracket,
     
     //Operators
-    star, hyphen, slash, plus, pow, mod,
+    star, hyphen, slash, plus, power, mod,
     equal, doubleEqual, arrowLeft, arrowRight, leftEqual, rightEqual, notEqual, notOperator, andOperator, orOperator,
     
     //Type literal
@@ -39,6 +39,7 @@ struct Token {
     TokenType type;
     std::string lexeme;
     
+    //This is not going to work on a near future
     bool isType() {
         switch (type) {
             case 31:

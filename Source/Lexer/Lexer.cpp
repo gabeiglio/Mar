@@ -183,7 +183,7 @@ std::vector<Token> Lexer::tokenize() {
                     tokens.push_back(Token {TokenType::slash, std::string(1, *forward)});
                 break;
             case '*': tokens.push_back(Token {TokenType::star, std::string(1, *forward)}); break;
-            case '^': tokens.push_back(Token {TokenType::pow, std::string(1, *forward)}); break;
+            case '^': tokens.push_back(Token {TokenType::power, std::string(1, *forward)}); break;
             case '%': tokens.push_back(Token {TokenType::mod, std::string(1, *forward)}); break;
             case '|':
                 if (peek() == '|') {

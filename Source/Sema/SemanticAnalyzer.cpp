@@ -172,6 +172,8 @@ void SemanticAnalyzer::exitScope() {
         enviroment = enviroment->getEnclosing();
 }
 
+/* ---------- Basic Type Chekling --------------- */
+//Not sure if it will stay implemented like this
 void SemanticAnalyzer::checkType(std::string& identifier, TokenType type, Node* expr) {
     switch (type) {
         case TokenType::stringType:

@@ -1,5 +1,9 @@
 //In this file the scope will be tested
 
+
+//Define print
+func print(msg string) void {}
+
 class Person {
     var name string
     var age int

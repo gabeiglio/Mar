@@ -34,6 +34,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/local/Cellar/cmake/3.15.2/share/cmake/Modules/Platform/Darwin-Initialize.cmake"
   "/usr/local/Cellar/cmake/3.15.2/share/cmake/Modules/Platform/Darwin.cmake"
   "/usr/local/Cellar/cmake/3.15.2/share/cmake/Modules/Platform/UnixPaths.cmake"
+  "/usr/local/lib/cmake/llvm/LLVM-Config.cmake"
+  "/usr/local/lib/cmake/llvm/LLVMConfig.cmake"
+  "/usr/local/lib/cmake/llvm/LLVMConfigVersion.cmake"
+  "/usr/local/lib/cmake/llvm/LLVMExports-debug.cmake"
+  "/usr/local/lib/cmake/llvm/LLVMExports.cmake"
   )
 
 # The corresponding makefile is:
@@ -50,4 +55,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/mar.dir/DependInfo.cmake"
+  "CMakeFiles/intrinsics_gen.dir/DependInfo.cmake"
   )
