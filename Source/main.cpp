@@ -38,8 +38,11 @@ void compile(T source) {
         SemanticAnalyzer sema(nodes);
         sema.performAnalysis(enviroment);
         
+        std::cout << "\n***** IR Code Generation *****\n\n";
+        
         //Code generation
         Codegen codegen(nodes, enviroment);
+        codegen.generate();
         
         
     } catch (const char* error) {

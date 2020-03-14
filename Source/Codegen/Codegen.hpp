@@ -26,10 +26,10 @@ class Codegen: public Visitor<llvm::Value*> {
     std::vector<std::unique_ptr<Node>> nodes;
     SymbolTable* enviroment;
     
-    static llvm::LLVMContext context;
-    static llvm::IRBuilder<> builder; //builder(context) ?
-    static std::unique_ptr<llvm::Module> module;
-    static std::map<std::string, llvm::Value*> namedValues;
+    llvm::LLVMContext context;
+    llvm::IRBuilder<> builder;
+    std::unique_ptr<llvm::Module> module;
+    std::map<std::string, llvm::Value*> namedValues;
     
     //Expr
     llvm::Value* visit(IdentifierExpr& expr) override;
@@ -61,8 +61,9 @@ class Codegen: public Visitor<llvm::Value*> {
     llvm::Value* visit(ClassDecl& decl) override;
     
 public:
-    Codegen(std::vector<std::unique_ptr<Node>>& nodes, SymbolTable* enviroment): nodes(std::move(nodes)), enviroment(enviroment) {}
+    Codegen(std::vector<std::unique_ptr<Node>>& nodes, SymbolTable* enviroment): nodes(std::move(nodes)), enviroment(enviroment), builder(context) {}
     
+    void generate();
 };
 
 #endif
