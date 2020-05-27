@@ -14,7 +14,6 @@
 #include "Evaluator/ASTVisualizer.hpp"
 #include "Sema/SemanticAnalyzer.hpp"
 #include "Sema/SymbolTable/SymbolTable.hpp"
-#include "Codegen/Codegen.hpp"
 
 template<typename T>
 void compile(T source) {
@@ -40,15 +39,7 @@ void compile(T source) {
         sema.performAnalysis(enviroment);
         
         std::cout << "\n***** IR Code Generation *****\n\n";
-        
-        //Code generation
-        std::cout << nodes.size() << std::endl;
-        Codegen codegen(nodes, enviroment);
-        codegen.generate();
-        //std::cout << "Codegen: " << nodes.size() << std::endl;
 
-        
-        
     } catch (const char* error) {
         std::cerr << error << std::endl;
     } catch (const std::string& error) {
