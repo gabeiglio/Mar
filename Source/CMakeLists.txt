@@ -4,13 +4,11 @@ project(mar)
 #Specify C++ version
 set (CMAKE_CXX_STANDARD 17)
 
-
 #path variables
 set(LEXER_DIR Lexer)
 set(PARSER_DIR Parser)
 set(EVAL_DIR Evaluator)
 set(SEMA_DIR Sema)
-set(CODEGEN_DIR Codegen)
 
 #Build
 add_executable( 
