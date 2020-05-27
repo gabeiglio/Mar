@@ -123,46 +123,6 @@ mar/fast:
 	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/build
 .PHONY : mar/fast
 
-#=============================================================================
-# Target rules for targets named intrinsics_gen
-
-# Build rule for target.
-intrinsics_gen: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 intrinsics_gen
-.PHONY : intrinsics_gen
-
-# fast build rule for target.
-intrinsics_gen/fast:
-	$(MAKE) -f CMakeFiles/intrinsics_gen.dir/build.make CMakeFiles/intrinsics_gen.dir/build
-.PHONY : intrinsics_gen/fast
-
-Codegen/Codegen.o: Codegen/Codegen.cpp.o
-
-.PHONY : Codegen/Codegen.o
-
-# target to build an object file
-Codegen/Codegen.cpp.o:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/Codegen/Codegen.cpp.o
-.PHONY : Codegen/Codegen.cpp.o
-
-Codegen/Codegen.i: Codegen/Codegen.cpp.i
-
-.PHONY : Codegen/Codegen.i
-
-# target to preprocess a source file
-Codegen/Codegen.cpp.i:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/Codegen/Codegen.cpp.i
-.PHONY : Codegen/Codegen.cpp.i
-
-Codegen/Codegen.s: Codegen/Codegen.cpp.s
-
-.PHONY : Codegen/Codegen.s
-
-# target to generate assembly for a file
-Codegen/Codegen.cpp.s:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/Codegen/Codegen.cpp.s
-.PHONY : Codegen/Codegen.cpp.s
-
 Evaluator/ASTVisualizer.o: Evaluator/ASTVisualizer.cpp.o
 
 .PHONY : Evaluator/ASTVisualizer.o
@@ -334,10 +294,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... mar"
-	@echo "... intrinsics_gen"
-	@echo "... Codegen/Codegen.o"
-	@echo "... Codegen/Codegen.i"
-	@echo "... Codegen/Codegen.s"
 	@echo "... Evaluator/ASTVisualizer.o"
 	@echo "... Evaluator/ASTVisualizer.i"
 	@echo "... Evaluator/ASTVisualizer.s"

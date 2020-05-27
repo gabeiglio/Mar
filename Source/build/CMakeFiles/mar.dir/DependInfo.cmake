@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/gabeiglio/Desktop/Developer/Mar/Source/Codegen/Codegen.cpp" "/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles/mar.dir/Codegen/Codegen.cpp.o"
   "/Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/ASTVisualizer.cpp" "/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles/mar.dir/Evaluator/ASTVisualizer.cpp.o"
   "/Users/gabeiglio/Desktop/Developer/Mar/Source/Lexer/Lexer.cpp" "/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles/mar.dir/Lexer/Lexer.cpp.o"
   "/Users/gabeiglio/Desktop/Developer/Mar/Source/Parser/Parser.cpp" "/Users/gabeiglio/Desktop/Developer/Mar/Source/build/CMakeFiles/mar.dir/Parser/Parser.cpp.o"
@@ -16,7 +15,6 @@ set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/usr/local/include"
   )
 
 # Targets to which this target links.
