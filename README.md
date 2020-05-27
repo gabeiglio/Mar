@@ -32,4 +32,4 @@ Mar will be a static, compiled, high-level language inspired by Swift
 
 ## What I am doing now?
 
-Banging my head while learning to use LLVM, in order to generate LLVM IR, also adding checks to the semantic analyzer here and there, and fixing bugs.
+Learning about how to implement static type cheking, and how to properly translate the AST into some kind of intermediate code representation like three address code
