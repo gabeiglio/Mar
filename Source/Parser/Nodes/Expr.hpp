@@ -20,11 +20,13 @@
 struct Node {
     virtual ~Node() {};
     virtual void accept(Visitor<void>& visitor) = 0;
+    
 };
 
 struct Expr: public Node {
     virtual ~Expr() {};
     virtual void accept(Visitor<void>& visitor) = 0;
+    
 };
 
 struct IdentifierExpr: public Expr {

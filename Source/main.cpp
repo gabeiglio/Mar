@@ -30,6 +30,7 @@ void compile(T source) {
 		Parser parser(tokens);
 		std::vector<std::unique_ptr<Node>> nodes = parser.parse();
         
+        //AST Node visualizator
 		ASTVisualizer visual;
         visual.evaluate(nodes);
 
@@ -41,8 +42,11 @@ void compile(T source) {
         std::cout << "\n***** IR Code Generation *****\n\n";
         
         //Code generation
+        std::cout << nodes.size() << std::endl;
         Codegen codegen(nodes, enviroment);
         codegen.generate();
+        //std::cout << "Codegen: " << nodes.size() << std::endl;
+
         
         
     } catch (const char* error) {

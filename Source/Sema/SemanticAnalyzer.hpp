@@ -56,7 +56,6 @@ private:
     
     //Helper function
     void innerCheck(Node& node);
-    void checkType(std::string& identifier, TokenType type, Node* expr);
     
 public:
     void performAnalysis(SymbolTable* enviroment);

@@ -22,48 +22,48 @@
 #include "/Users/gabeiglio/Desktop/Developer/Mar/Source/Evaluator/Visitor/Visitor.hpp"
 #include "/Users/gabeiglio/Desktop/Developer/Mar/Source/Sema/SymbolTable/SymbolTable.hpp"
 
-class Codegen: public Visitor<llvm::Value*> {
+class Codegen: public Visitor<void> {
+    std::vector<llvm::Value*> representation;
     std::vector<std::unique_ptr<Node>> nodes;
     SymbolTable* enviroment;
     
+    //LLVM properties
     llvm::LLVMContext context;
     llvm::IRBuilder<> builder;
     std::unique_ptr<llvm::Module> module;
-    std::map<std::string, llvm::Value*> namedValues;
     
     //Expr
-    llvm::Value* visit(IdentifierExpr& expr) override;
-    llvm::Value* visit(IntegerExpr& expr) override;
-    llvm::Value* visit(DoubleExpr& expr) override ;
-    llvm::Value* visit(StringExpr& expr) override;
-    llvm::Value* visit(CharExpr& expr) override;
-    llvm::Value* visit(BoolExpr& expr) override;
-    llvm::Value* visit(UnaryExpr& expr) override;
-    llvm::Value* visit(BinaryOpExpr& expr) override;
-    llvm::Value* visit(CallExpr& expr) override;
-    llvm::Value* visit(AssignExpr& expr) override;
+    void visit(IdentifierExpr& expr) override;
+    void visit(IntegerExpr& expr) override;
+    void visit(DoubleExpr& expr) override ;
+    void visit(StringExpr& expr) override;
+    void visit(CharExpr& expr) override;
+    void visit(BoolExpr& expr) override;
+    void visit(UnaryExpr& expr) override;
+    void visit(BinaryOpExpr& expr) override;
+    void visit(CallExpr& expr) override;
+    void visit(AssignExpr& expr) override;
         
     //Stmt
-    llvm::Value* visit(ExprStmt& stmt) override;
-    llvm::Value* visit(IfStmt& stmt) override;
-    llvm::Value* visit(WhileStmt& stmt) override;
-    llvm::Value* visit(ForInStmt& stmt) override;
-    llvm::Value* visit(ReturnStmt& stmt) override;
+    void visit(ExprStmt& stmt) override;
+    void visit(IfStmt& stmt) override;
+    void visit(WhileStmt& stmt) override;
+    void visit(ForInStmt& stmt) override;
+    void visit(ReturnStmt& stmt) override;
         
     //Block
-    llvm::Value* visit(Block& block) override;
+    void visit(Block& block) override;
     
     //Decl
-    llvm::Value* visit(ParamDecl& decl) override;
-    llvm::Value* visit(VarDecl& decl) override;
-    llvm::Value* visit(ConstDecl& decl) override;
-    llvm::Value* visit(FuncDecl& decl) override;
-    llvm::Value* visit(ClassDecl& decl) override;
+    void visit(ParamDecl& decl) override;
+    void visit(VarDecl& decl) override;
+    void visit(ConstDecl& decl) override;
+    void visit(FuncDecl& decl) override;
+    void visit(ClassDecl& decl) override;
     
 public:
     Codegen(std::vector<std::unique_ptr<Node>>& nodes, SymbolTable* enviroment): nodes(std::move(nodes)), enviroment(enviroment), builder(context) {}
-    
-    void generate();
+    std::vector<llvm::Value*> generate();
 };
 
 #endif

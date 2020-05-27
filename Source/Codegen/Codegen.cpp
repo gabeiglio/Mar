@@ -1,87 +1,99 @@
 #include "Codegen.hpp"
+#include <iostream>
 
-void Codegen::generate() {
+std::vector<llvm::Value*> Codegen::generate() {
     module = std::make_unique<llvm::Module>("Program", context);
     
-    DoubleExpr expr(1.2);
-    visit(expr);
-    
-    DoubleExpr expr1(1.2);
-    visit(expr1);
-
+    //Loop through all the nodes and append the generated code to the vector
+    for (auto& node: nodes)
+        node->accept(*this);
     
     module->print(llvm::errs(), nullptr);
+    return representation;
 }
 
-llvm::Value* Codegen::visit(IdentifierExpr& expr) {
-    return nullptr;
+void Codegen::visit(IdentifierExpr& expr) {
+    
 }
 
-llvm::Value* Codegen::visit(IntegerExpr& expr) {
-    return nullptr;
+void Codegen::visit(IntegerExpr& expr) {
+    representation.push_back(llvm::ConstantFP::get(context, llvm::APFloat((float)expr.lexeme)));
 }
 
-llvm::Value* Codegen::visit(DoubleExpr& expr) {
-    return builder.CreateFAdd(llvm::ConstantFP::get(context, llvm::APFloat(expr.lexeme)), llvm::ConstantFP::get(context, llvm::APFloat(expr.lexeme)), "addtmp");
+void Codegen::visit(DoubleExpr& expr) {
+
 }
 
-llvm::Value* Codegen::visit(StringExpr& expr) {
-    return nullptr;
+void Codegen::visit(StringExpr& expr) {
+    
 }
 
-llvm::Value* Codegen::visit(CharExpr& expr) { return nullptr; }
-
-llvm::Value* Codegen::visit(BoolExpr& expr) { return nullptr; }
-
-llvm::Value* Codegen::visit(UnaryExpr& expr) { return nullptr; }
-
-llvm::Value* Codegen::visit(BinaryOpExpr& expr) {
-//    Value* rhs = expr.rhs->accept(*this);
-//    Value* lhs = expr.lhs->accept(*this);
-//
-//    if (!rhs || !lhs) return nullptr;
-//
-//    switch (expr.op) {
-//        case TokenType::plus:
-//            builder.createFAdd(lhs, rhs, "addtmp");
-//            break;
-//        case TokenType::hyphen:
-//            builder.createFSub(lhs, rhs, "subtmp");
-//            break;
-//        case TokenType::star:
-//            builder.createFMul(lhs, rhs, "multmp");
-//            break;
-//        case TokenType::slash:  break;
-//        default: break;
-//    }
-    return nullptr; 
+void Codegen::visit(CharExpr& expr) {
+    
 }
 
-llvm::Value* Codegen::visit(CallExpr& expr) { return nullptr; }
+void Codegen::visit(BoolExpr& expr) {
+    
+}
 
-llvm::Value* Codegen::visit(AssignExpr& expr) { return nullptr; }
+void Codegen::visit(UnaryExpr& expr) {
+    
+}
+
+void Codegen::visit(BinaryOpExpr& expr) {
+
+}
+
+void Codegen::visit(CallExpr& expr) {
+    
+}
+
+void Codegen::visit(AssignExpr& expr) {
+    
+}
        
 //Stmt
-llvm::Value* Codegen::visit(ExprStmt& stmt) { return nullptr; }
+void Codegen::visit(ExprStmt& stmt) {
+    
+}
 
-llvm::Value* Codegen::visit(IfStmt& stmt) { return nullptr; }
+void Codegen::visit(IfStmt& stmt) {
+    
+}
 
-llvm::Value* Codegen::visit(WhileStmt& stmt) { return nullptr; }
+void Codegen::visit(WhileStmt& stmt) {
+}
 
-llvm::Value* Codegen::visit(ForInStmt& stmt) { return nullptr; }
+void Codegen::visit(ForInStmt& stmt) {
+    
+}
 
-llvm::Value* Codegen::visit(ReturnStmt& stmt) { return nullptr; }
+void Codegen::visit(ReturnStmt& stmt) {
+    
+}
        
 //Block
-llvm::Value* Codegen::visit(Block& block) { return nullptr; }
+void Codegen::visit(Block& block) {
+    
+}
    
 //Decl
-llvm::Value* Codegen::visit(ParamDecl& decl) { return nullptr; }
+void Codegen::visit(ParamDecl& decl) {
+    
+}
 
-llvm::Value* Codegen::visit(VarDecl& decl) { return nullptr; }
+void Codegen::visit(VarDecl& decl) {
+    
+}
 
-llvm::Value* Codegen::visit(ConstDecl& decl) { return nullptr; }
+void Codegen::visit(ConstDecl& decl) {
+    
+}
 
-llvm::Value* Codegen::visit(FuncDecl& decl) { return nullptr; }
+void Codegen::visit(FuncDecl& decl) {
+    
+}
 
-llvm::Value* Codegen::visit(ClassDecl& decl) { return nullptr; }
+void Codegen::visit(ClassDecl& decl) {
+    
+}
