@@ -4,6 +4,9 @@
 	* calls, expressions, nested stuff
 */
 
+func print(msg string) void {}
+
+
 class Person {
 
 	//Const attributes
@@ -36,3 +39,13 @@ while count < 100 && count > 90 {
 	}
 	//count = count + 1
 }
+
+if 1 + 1 - 10 * -1 % 12.3 == 100 || !false == true {
+	const result int = 1 + 1
+	var index double = 1/2
+
+	while result + 1 < index {
+		var result int
+	}
+}
+
