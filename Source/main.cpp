@@ -37,8 +37,6 @@ void compile(T source) {
         SymbolTable* enviroment = new SymbolTable();
         SemanticAnalyzer sema(nodes);
         sema.performAnalysis(enviroment);
-        
-        std::cout << "\n***** IR Code Generation *****\n\n";
 
     } catch (const char* error) {
         std::cerr << error << std::endl;
@@ -68,7 +66,7 @@ void initCompilerWithFile(std::string& filePath) {
 
 int main(int argc, char* argv[]) {
 	if (argc == 2) {
-		if (!strcmp(argv[1], "--repl")) initRepl();
+		if (!strcmp(argv[1], "-repl")) initRepl();
 		else {
 			std::ifstream test(argv[1]);
 			if (!test) {
