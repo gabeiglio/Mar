@@ -21,7 +21,7 @@ std::vector<std::unique_ptr<Node>> Parser::parse() {
             case TokenType::ifKey: nodes.push_back(parseIfStmt()); break;
             case TokenType::returnKey: nodes.push_back(parseReturnStmt()); break;
 			case TokenType::forKey: nodes.push_back(parseForInStmt()); break;
-            default: nodes.push_back(parseOrLogicalExpr());
+			default: nodes.push_back(parseOrLogicalExpr());
         }
     }
     
@@ -60,15 +60,16 @@ std::unique_ptr<Decl> Parser::parseVariableDecl() {
     //Get identifier
     if (IdentifierExpr* result = dynamic_cast<IdentifierExpr*>(parsePrimaryExpr().get())) {
         std::string str = result->lexeme;
-        identifier = std::unique_ptr<IdentifierExpr> {new IdentifierExpr{str}};
+		identifier = std::unique_ptr<IdentifierExpr> {new IdentifierExpr{str}};
     } else throw "[ERROR] Variable declaration must containt a valid identifier";
 
     //Check for type
-	if (tokens[index].isType() || !tokens[index].isType()) {
+	if (index < tokens.size() && (tokens[index].isType() || !tokens[index].isType())) {
 		type = tokens[index].type;
         index++;
 	} else throw "[ERROR] Variable declaration must containt a valid type";
 
+	//We perform this check in order to know if the variable will be initialized
     if (index < tokens.size() && tokens[index].type == TokenType::equal) {
         consume(TokenType::equal);
         return std::unique_ptr<VarDecl> { new VarDecl{identifier, type, parseOrLogicalExpr()} };
@@ -90,8 +91,8 @@ std::unique_ptr<Decl> Parser::parseConstDecl() {
     } else throw "[ERROR] Variable declaration must containt a valid identifier";
    
     //Check for type
-    if (tokens[index].isType() || !tokens[index].isType()) {
-        type = tokens[index].type;
+    if (index < tokens.size() && (tokens[index].isType() || !tokens[index].isType())) {
+		type = tokens[index].type;
         index++;
     } else throw "[ERROR] Variable declaration must containt a valid type";
     
@@ -265,7 +266,8 @@ std::unique_ptr<Expr> Parser::parseCallOrAssignmentExpr() {
         
         //Argument list
         if (tokens[index].type == TokenType::openParen) {
-            return std::unique_ptr<CallExpr> { new CallExpr{std::unique_ptr<IdentifierExpr> { new IdentifierExpr {result->lexeme}}, parseArgumentList()} };
+            return std::unique_ptr<CallExpr> { 
+                new CallExpr{std::unique_ptr<IdentifierExpr> { new IdentifierExpr {result->lexeme}}, parseArgumentList()} };
         }
         
         //Assigment expr
@@ -280,6 +282,10 @@ std::unique_ptr<Expr> Parser::parseCallOrAssignmentExpr() {
 }
 
 std::unique_ptr<Expr> Parser::parsePrimaryExpr() {
+
+    //First we want to know if there are any available
+    if (index >= tokens.size()) throw "[ERROR] Unexpexted " + tokens[--index].lexeme;
+
     switch (tokens[index].type) {
         case TokenType::identifier: index++; return std::unique_ptr<IdentifierExpr> { new IdentifierExpr {tokens[index - 1].lexeme} };
         case TokenType::intLiteral: index++; return std::unique_ptr<IntegerExpr> { new IntegerExpr {stoi(tokens[index - 1].lexeme)} };
