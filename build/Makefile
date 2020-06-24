@@ -56,6 +56,52 @@ CMAKE_BINARY_DIR = /Users/gabeiglio/Desktop/Developer/Mar/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/local/Cellar/cmake/3.15.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/local/Cellar/cmake/3.15.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/local/Cellar/cmake/3.15.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/local/Cellar/cmake/3.15.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/Cellar/cmake/3.15.2/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/Cellar/cmake/3.15.2/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -120,170 +166,60 @@ mar: cmake_check_build_system
 
 # fast build rule for target.
 mar/fast:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/build
+	$(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/build
 .PHONY : mar/fast
 
-src/Evaluator/ASTVisualizer.o: src/Evaluator/ASTVisualizer.cpp.o
+#=============================================================================
+# Target rules for targets named gmock
 
-.PHONY : src/Evaluator/ASTVisualizer.o
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
 
-# target to build an object file
-src/Evaluator/ASTVisualizer.cpp.o:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/src/Evaluator/ASTVisualizer.cpp.o
-.PHONY : src/Evaluator/ASTVisualizer.cpp.o
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) -f lib/googletest/googlemock/CMakeFiles/gmock.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
 
-src/Evaluator/ASTVisualizer.i: src/Evaluator/ASTVisualizer.cpp.i
+#=============================================================================
+# Target rules for targets named gmock_main
 
-.PHONY : src/Evaluator/ASTVisualizer.i
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
 
-# target to preprocess a source file
-src/Evaluator/ASTVisualizer.cpp.i:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/src/Evaluator/ASTVisualizer.cpp.i
-.PHONY : src/Evaluator/ASTVisualizer.cpp.i
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) -f lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
 
-src/Evaluator/ASTVisualizer.s: src/Evaluator/ASTVisualizer.cpp.s
+#=============================================================================
+# Target rules for targets named gtest_main
 
-.PHONY : src/Evaluator/ASTVisualizer.s
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
 
-# target to generate assembly for a file
-src/Evaluator/ASTVisualizer.cpp.s:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/src/Evaluator/ASTVisualizer.cpp.s
-.PHONY : src/Evaluator/ASTVisualizer.cpp.s
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) -f lib/googletest/googletest/CMakeFiles/gtest_main.dir/build.make lib/googletest/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
 
-src/Lexer/Lexer.o: src/Lexer/Lexer.cpp.o
+#=============================================================================
+# Target rules for targets named gtest
 
-.PHONY : src/Lexer/Lexer.o
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
 
-# target to build an object file
-src/Lexer/Lexer.cpp.o:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/src/Lexer/Lexer.cpp.o
-.PHONY : src/Lexer/Lexer.cpp.o
-
-src/Lexer/Lexer.i: src/Lexer/Lexer.cpp.i
-
-.PHONY : src/Lexer/Lexer.i
-
-# target to preprocess a source file
-src/Lexer/Lexer.cpp.i:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/src/Lexer/Lexer.cpp.i
-.PHONY : src/Lexer/Lexer.cpp.i
-
-src/Lexer/Lexer.s: src/Lexer/Lexer.cpp.s
-
-.PHONY : src/Lexer/Lexer.s
-
-# target to generate assembly for a file
-src/Lexer/Lexer.cpp.s:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/src/Lexer/Lexer.cpp.s
-.PHONY : src/Lexer/Lexer.cpp.s
-
-src/Parser/Parser.o: src/Parser/Parser.cpp.o
-
-.PHONY : src/Parser/Parser.o
-
-# target to build an object file
-src/Parser/Parser.cpp.o:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/src/Parser/Parser.cpp.o
-.PHONY : src/Parser/Parser.cpp.o
-
-src/Parser/Parser.i: src/Parser/Parser.cpp.i
-
-.PHONY : src/Parser/Parser.i
-
-# target to preprocess a source file
-src/Parser/Parser.cpp.i:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/src/Parser/Parser.cpp.i
-.PHONY : src/Parser/Parser.cpp.i
-
-src/Parser/Parser.s: src/Parser/Parser.cpp.s
-
-.PHONY : src/Parser/Parser.s
-
-# target to generate assembly for a file
-src/Parser/Parser.cpp.s:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/src/Parser/Parser.cpp.s
-.PHONY : src/Parser/Parser.cpp.s
-
-src/Sema/SemanticAnalyzer.o: src/Sema/SemanticAnalyzer.cpp.o
-
-.PHONY : src/Sema/SemanticAnalyzer.o
-
-# target to build an object file
-src/Sema/SemanticAnalyzer.cpp.o:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/src/Sema/SemanticAnalyzer.cpp.o
-.PHONY : src/Sema/SemanticAnalyzer.cpp.o
-
-src/Sema/SemanticAnalyzer.i: src/Sema/SemanticAnalyzer.cpp.i
-
-.PHONY : src/Sema/SemanticAnalyzer.i
-
-# target to preprocess a source file
-src/Sema/SemanticAnalyzer.cpp.i:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/src/Sema/SemanticAnalyzer.cpp.i
-.PHONY : src/Sema/SemanticAnalyzer.cpp.i
-
-src/Sema/SemanticAnalyzer.s: src/Sema/SemanticAnalyzer.cpp.s
-
-.PHONY : src/Sema/SemanticAnalyzer.s
-
-# target to generate assembly for a file
-src/Sema/SemanticAnalyzer.cpp.s:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/src/Sema/SemanticAnalyzer.cpp.s
-.PHONY : src/Sema/SemanticAnalyzer.cpp.s
-
-src/Sema/SymbolTable/SymbolTable.o: src/Sema/SymbolTable/SymbolTable.cpp.o
-
-.PHONY : src/Sema/SymbolTable/SymbolTable.o
-
-# target to build an object file
-src/Sema/SymbolTable/SymbolTable.cpp.o:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/src/Sema/SymbolTable/SymbolTable.cpp.o
-.PHONY : src/Sema/SymbolTable/SymbolTable.cpp.o
-
-src/Sema/SymbolTable/SymbolTable.i: src/Sema/SymbolTable/SymbolTable.cpp.i
-
-.PHONY : src/Sema/SymbolTable/SymbolTable.i
-
-# target to preprocess a source file
-src/Sema/SymbolTable/SymbolTable.cpp.i:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/src/Sema/SymbolTable/SymbolTable.cpp.i
-.PHONY : src/Sema/SymbolTable/SymbolTable.cpp.i
-
-src/Sema/SymbolTable/SymbolTable.s: src/Sema/SymbolTable/SymbolTable.cpp.s
-
-.PHONY : src/Sema/SymbolTable/SymbolTable.s
-
-# target to generate assembly for a file
-src/Sema/SymbolTable/SymbolTable.cpp.s:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/src/Sema/SymbolTable/SymbolTable.cpp.s
-.PHONY : src/Sema/SymbolTable/SymbolTable.cpp.s
-
-src/main.o: src/main.cpp.o
-
-.PHONY : src/main.o
-
-# target to build an object file
-src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
-
-src/main.i: src/main.cpp.i
-
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
-
-src/main.s: src/main.cpp.s
-
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/mar.dir/build.make CMakeFiles/mar.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) -f lib/googletest/googletest/CMakeFiles/gtest.dir/build.make lib/googletest/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
 
 # Help Target
 help:
@@ -291,27 +227,17 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... mar"
-	@echo "... src/Evaluator/ASTVisualizer.o"
-	@echo "... src/Evaluator/ASTVisualizer.i"
-	@echo "... src/Evaluator/ASTVisualizer.s"
-	@echo "... src/Lexer/Lexer.o"
-	@echo "... src/Lexer/Lexer.i"
-	@echo "... src/Lexer/Lexer.s"
-	@echo "... src/Parser/Parser.o"
-	@echo "... src/Parser/Parser.i"
-	@echo "... src/Parser/Parser.s"
-	@echo "... src/Sema/SemanticAnalyzer.o"
-	@echo "... src/Sema/SemanticAnalyzer.i"
-	@echo "... src/Sema/SemanticAnalyzer.s"
-	@echo "... src/Sema/SymbolTable/SymbolTable.o"
-	@echo "... src/Sema/SymbolTable/SymbolTable.i"
-	@echo "... src/Sema/SymbolTable/SymbolTable.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... gmock"
+	@echo "... gmock_main"
+	@echo "... gtest_main"
+	@echo "... gtest"
 .PHONY : help
 
 
