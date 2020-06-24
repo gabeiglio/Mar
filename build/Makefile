@@ -157,17 +157,43 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named mar
+# Target rules for targets named mar_lib
 
 # Build rule for target.
-mar: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 mar
-.PHONY : mar
+mar_lib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mar_lib
+.PHONY : mar_lib
 
 # fast build rule for target.
-mar/fast:
-	$(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/build
-.PHONY : mar/fast
+mar_lib/fast:
+	$(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/build
+.PHONY : mar_lib/fast
+
+#=============================================================================
+# Target rules for targets named mar_run
+
+# Build rule for target.
+mar_run: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mar_run
+.PHONY : mar_run
+
+# fast build rule for target.
+mar_run/fast:
+	$(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/build
+.PHONY : mar_run/fast
+
+#=============================================================================
+# Target rules for targets named mar_tst
+
+# Build rule for target.
+mar_tst: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mar_tst
+.PHONY : mar_tst
+
+# fast build rule for target.
+mar_tst/fast:
+	$(MAKE) -f test/CMakeFiles/mar_tst.dir/build.make test/CMakeFiles/mar_tst.dir/build
+.PHONY : mar_tst/fast
 
 #=============================================================================
 # Target rules for targets named gmock
@@ -233,7 +259,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... mar"
+	@echo "... mar_lib"
+	@echo "... mar_run"
+	@echo "... mar_tst"
 	@echo "... gmock"
 	@echo "... gmock_main"
 	@echo "... gtest_main"

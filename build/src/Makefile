@@ -92,16 +92,6 @@ install/fast: preinstall/fast
 	/usr/local/Cellar/cmake/3.15.2/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -123,6 +113,16 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -157,19 +157,34 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/mar.dir/rule:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/mar.dir/rule
-.PHONY : src/CMakeFiles/mar.dir/rule
+src/CMakeFiles/mar_lib.dir/rule:
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/mar_lib.dir/rule
+.PHONY : src/CMakeFiles/mar_lib.dir/rule
 
 # Convenience name for target.
-mar: src/CMakeFiles/mar.dir/rule
+mar_lib: src/CMakeFiles/mar_lib.dir/rule
 
-.PHONY : mar
+.PHONY : mar_lib
 
 # fast build rule for target.
-mar/fast:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/build
-.PHONY : mar/fast
+mar_lib/fast:
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/build
+.PHONY : mar_lib/fast
+
+# Convenience name for target.
+src/CMakeFiles/mar_run.dir/rule:
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/mar_run.dir/rule
+.PHONY : src/CMakeFiles/mar_run.dir/rule
+
+# Convenience name for target.
+mar_run: src/CMakeFiles/mar_run.dir/rule
+
+.PHONY : mar_run
+
+# fast build rule for target.
+mar_run/fast:
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/build
+.PHONY : mar_run/fast
 
 Evaluator/ASTVisualizer.o: Evaluator/ASTVisualizer.cpp.o
 
@@ -177,7 +192,8 @@ Evaluator/ASTVisualizer.o: Evaluator/ASTVisualizer.cpp.o
 
 # target to build an object file
 Evaluator/ASTVisualizer.cpp.o:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/Evaluator/ASTVisualizer.cpp.o
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/Evaluator/ASTVisualizer.cpp.o
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/Evaluator/ASTVisualizer.cpp.o
 .PHONY : Evaluator/ASTVisualizer.cpp.o
 
 Evaluator/ASTVisualizer.i: Evaluator/ASTVisualizer.cpp.i
@@ -186,7 +202,8 @@ Evaluator/ASTVisualizer.i: Evaluator/ASTVisualizer.cpp.i
 
 # target to preprocess a source file
 Evaluator/ASTVisualizer.cpp.i:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/Evaluator/ASTVisualizer.cpp.i
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/Evaluator/ASTVisualizer.cpp.i
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/Evaluator/ASTVisualizer.cpp.i
 .PHONY : Evaluator/ASTVisualizer.cpp.i
 
 Evaluator/ASTVisualizer.s: Evaluator/ASTVisualizer.cpp.s
@@ -195,7 +212,8 @@ Evaluator/ASTVisualizer.s: Evaluator/ASTVisualizer.cpp.s
 
 # target to generate assembly for a file
 Evaluator/ASTVisualizer.cpp.s:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/Evaluator/ASTVisualizer.cpp.s
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/Evaluator/ASTVisualizer.cpp.s
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/Evaluator/ASTVisualizer.cpp.s
 .PHONY : Evaluator/ASTVisualizer.cpp.s
 
 Lexer/Lexer.o: Lexer/Lexer.cpp.o
@@ -204,7 +222,8 @@ Lexer/Lexer.o: Lexer/Lexer.cpp.o
 
 # target to build an object file
 Lexer/Lexer.cpp.o:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/Lexer/Lexer.cpp.o
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/Lexer/Lexer.cpp.o
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/Lexer/Lexer.cpp.o
 .PHONY : Lexer/Lexer.cpp.o
 
 Lexer/Lexer.i: Lexer/Lexer.cpp.i
@@ -213,7 +232,8 @@ Lexer/Lexer.i: Lexer/Lexer.cpp.i
 
 # target to preprocess a source file
 Lexer/Lexer.cpp.i:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/Lexer/Lexer.cpp.i
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/Lexer/Lexer.cpp.i
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/Lexer/Lexer.cpp.i
 .PHONY : Lexer/Lexer.cpp.i
 
 Lexer/Lexer.s: Lexer/Lexer.cpp.s
@@ -222,7 +242,8 @@ Lexer/Lexer.s: Lexer/Lexer.cpp.s
 
 # target to generate assembly for a file
 Lexer/Lexer.cpp.s:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/Lexer/Lexer.cpp.s
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/Lexer/Lexer.cpp.s
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/Lexer/Lexer.cpp.s
 .PHONY : Lexer/Lexer.cpp.s
 
 Parser/Parser.o: Parser/Parser.cpp.o
@@ -231,7 +252,8 @@ Parser/Parser.o: Parser/Parser.cpp.o
 
 # target to build an object file
 Parser/Parser.cpp.o:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/Parser/Parser.cpp.o
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/Parser/Parser.cpp.o
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/Parser/Parser.cpp.o
 .PHONY : Parser/Parser.cpp.o
 
 Parser/Parser.i: Parser/Parser.cpp.i
@@ -240,7 +262,8 @@ Parser/Parser.i: Parser/Parser.cpp.i
 
 # target to preprocess a source file
 Parser/Parser.cpp.i:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/Parser/Parser.cpp.i
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/Parser/Parser.cpp.i
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/Parser/Parser.cpp.i
 .PHONY : Parser/Parser.cpp.i
 
 Parser/Parser.s: Parser/Parser.cpp.s
@@ -249,7 +272,8 @@ Parser/Parser.s: Parser/Parser.cpp.s
 
 # target to generate assembly for a file
 Parser/Parser.cpp.s:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/Parser/Parser.cpp.s
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/Parser/Parser.cpp.s
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/Parser/Parser.cpp.s
 .PHONY : Parser/Parser.cpp.s
 
 Sema/SemanticAnalyzer.o: Sema/SemanticAnalyzer.cpp.o
@@ -258,7 +282,8 @@ Sema/SemanticAnalyzer.o: Sema/SemanticAnalyzer.cpp.o
 
 # target to build an object file
 Sema/SemanticAnalyzer.cpp.o:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/Sema/SemanticAnalyzer.cpp.o
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/Sema/SemanticAnalyzer.cpp.o
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/Sema/SemanticAnalyzer.cpp.o
 .PHONY : Sema/SemanticAnalyzer.cpp.o
 
 Sema/SemanticAnalyzer.i: Sema/SemanticAnalyzer.cpp.i
@@ -267,7 +292,8 @@ Sema/SemanticAnalyzer.i: Sema/SemanticAnalyzer.cpp.i
 
 # target to preprocess a source file
 Sema/SemanticAnalyzer.cpp.i:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/Sema/SemanticAnalyzer.cpp.i
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/Sema/SemanticAnalyzer.cpp.i
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/Sema/SemanticAnalyzer.cpp.i
 .PHONY : Sema/SemanticAnalyzer.cpp.i
 
 Sema/SemanticAnalyzer.s: Sema/SemanticAnalyzer.cpp.s
@@ -276,7 +302,8 @@ Sema/SemanticAnalyzer.s: Sema/SemanticAnalyzer.cpp.s
 
 # target to generate assembly for a file
 Sema/SemanticAnalyzer.cpp.s:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/Sema/SemanticAnalyzer.cpp.s
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/Sema/SemanticAnalyzer.cpp.s
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/Sema/SemanticAnalyzer.cpp.s
 .PHONY : Sema/SemanticAnalyzer.cpp.s
 
 Sema/SymbolTable/SymbolTable.o: Sema/SymbolTable/SymbolTable.cpp.o
@@ -285,7 +312,8 @@ Sema/SymbolTable/SymbolTable.o: Sema/SymbolTable/SymbolTable.cpp.o
 
 # target to build an object file
 Sema/SymbolTable/SymbolTable.cpp.o:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/Sema/SymbolTable/SymbolTable.cpp.o
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/Sema/SymbolTable/SymbolTable.cpp.o
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/Sema/SymbolTable/SymbolTable.cpp.o
 .PHONY : Sema/SymbolTable/SymbolTable.cpp.o
 
 Sema/SymbolTable/SymbolTable.i: Sema/SymbolTable/SymbolTable.cpp.i
@@ -294,7 +322,8 @@ Sema/SymbolTable/SymbolTable.i: Sema/SymbolTable/SymbolTable.cpp.i
 
 # target to preprocess a source file
 Sema/SymbolTable/SymbolTable.cpp.i:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/Sema/SymbolTable/SymbolTable.cpp.i
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/Sema/SymbolTable/SymbolTable.cpp.i
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/Sema/SymbolTable/SymbolTable.cpp.i
 .PHONY : Sema/SymbolTable/SymbolTable.cpp.i
 
 Sema/SymbolTable/SymbolTable.s: Sema/SymbolTable/SymbolTable.cpp.s
@@ -303,7 +332,8 @@ Sema/SymbolTable/SymbolTable.s: Sema/SymbolTable/SymbolTable.cpp.s
 
 # target to generate assembly for a file
 Sema/SymbolTable/SymbolTable.cpp.s:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/Sema/SymbolTable/SymbolTable.cpp.s
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/Sema/SymbolTable/SymbolTable.cpp.s
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/Sema/SymbolTable/SymbolTable.cpp.s
 .PHONY : Sema/SymbolTable/SymbolTable.cpp.s
 
 main.o: main.cpp.o
@@ -312,7 +342,8 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/main.cpp.o
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/main.cpp.o
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -321,7 +352,8 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/main.cpp.i
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/main.cpp.i
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -330,7 +362,8 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar.dir/build.make src/CMakeFiles/mar.dir/main.cpp.s
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_lib.dir/build.make src/CMakeFiles/mar_lib.dir/main.cpp.s
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f src/CMakeFiles/mar_run.dir/build.make src/CMakeFiles/mar_run.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -342,10 +375,11 @@ help:
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... install"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... mar"
+	@echo "... list_install_components"
+	@echo "... mar_lib"
+	@echo "... mar_run"
 	@echo "... Evaluator/ASTVisualizer.o"
 	@echo "... Evaluator/ASTVisualizer.i"
 	@echo "... Evaluator/ASTVisualizer.s"

@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libmar_lib.a  CMakeFiles/mar_lib.dir/Evaluator/ASTVisualizer.cpp.o CMakeFiles/mar_lib.dir/Lexer/Lexer.cpp.o CMakeFiles/mar_lib.dir/Parser/Parser.cpp.o CMakeFiles/mar_lib.dir/Sema/SemanticAnalyzer.cpp.o CMakeFiles/mar_lib.dir/Sema/SymbolTable/SymbolTable.cpp.o CMakeFiles/mar_lib.dir/main.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libmar_lib.a

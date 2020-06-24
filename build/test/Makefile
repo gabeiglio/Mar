@@ -156,6 +156,48 @@ depend:
 	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+test/CMakeFiles/mar_tst.dir/rule:
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/mar_tst.dir/rule
+.PHONY : test/CMakeFiles/mar_tst.dir/rule
+
+# Convenience name for target.
+mar_tst: test/CMakeFiles/mar_tst.dir/rule
+
+.PHONY : mar_tst
+
+# fast build rule for target.
+mar_tst/fast:
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f test/CMakeFiles/mar_tst.dir/build.make test/CMakeFiles/mar_tst.dir/build
+.PHONY : mar_tst/fast
+
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f test/CMakeFiles/mar_tst.dir/build.make test/CMakeFiles/mar_tst.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f test/CMakeFiles/mar_tst.dir/build.make test/CMakeFiles/mar_tst.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	cd /Users/gabeiglio/Desktop/Developer/Mar/build && $(MAKE) -f test/CMakeFiles/mar_tst.dir/build.make test/CMakeFiles/mar_tst.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -168,6 +210,10 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... mar_tst"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
