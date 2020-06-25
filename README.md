@@ -33,3 +33,7 @@ Mar will be a static, compiled, high-level language inspired by Swift
 ## What I am doing now?
 
 Learning about how to implement static type cheking, and how to properly translate the AST into some kind of intermediate code representation like three address code, oh and also I am researching into creating a testing framework in order to maintain stability on the compiler
+
+## Depencencies used:
+
+* googletest: Test suite
