@@ -10,9 +10,9 @@
 #define Lexer_hpp
 
 #include <fstream>
-#include <iostream>
 #include <vector>
 #include <map>
+
 #include "Token.hpp"
 
 class Lexer {
