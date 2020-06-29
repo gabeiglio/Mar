@@ -37,3 +37,26 @@ Learning about how to implement static type cheking, and how to properly transla
 ## Depencencies used:
 
 * googletest: Test suite
+
+## Get mar compiler running:
+
+Download via HTTPS:
+
+```
+git https://github.com/gabeiglio/Mar.git
+```
+
+Run these commands on mar root folder:
+
+```
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make .
+```
+
+There are two commands to run the compiler either:
+* REPL: ./build/src/mar_run -repl
+* Mar file: ./build/src/mar_run PATH_TO_FILE
+
+
