@@ -13,14 +13,14 @@ TEST(LexerTest, tokens) {
 
     //Exptexted output
     std::vector<Token> expected = {Token{TokenType::varKey, "var"}, Token{TokenType::identifier, "age"},
-                                    Token{TokenType::intType, "int"}, Token{TokenType::equal},
+                                    Token{TokenType::intType, "int"}, Token{TokenType::equal, "="},
                                     Token{TokenType::intLiteral, "19"}};
 
     //Assert vector size first
     EXPECT_TRUE(tokens.size() == expected.size());
 
     for (unsigned int i; i < tokens.size(); i++)
-        EXPECT_TRUE(tokens[i].type == expected[i].type); //&& tokens[i].lexeme.compare(expected[i].lexeme));
+        EXPECT_TRUE(tokens[i].type == expected[i].type && tokens[i].lexeme == expected[i].lexeme);
 
 }
 
