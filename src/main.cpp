@@ -76,5 +76,7 @@ int main(int argc, char* argv[]) {
 			std::string path (argv[1]);
 			initCompilerWithFile(path);
 		}
-	}
+	} else if (argc == 1) {
+        std::cout << "Usage for Mar:\n -repl or path_to_file\n";
+    }
 }
