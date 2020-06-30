@@ -43,7 +43,7 @@ Learning about how to implement static type cheking, and how to properly transla
 Download via HTTPS:
 
 ```
-git https://github.com/gabeiglio/Mar.git
+git clone https://github.com/gabeiglio/Mar.git
 ```
 
 Run these commands on mar root folder:
