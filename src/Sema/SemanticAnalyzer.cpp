@@ -152,7 +152,14 @@ void SemanticAnalyzer::visit(ClassDecl& decl) {
 }
 
 void SemanticAnalyzer::visit(StructDecl& decl) {
-    //Implement
+    
+    //Get identifier
+    if (IdentifierExpr* identifier = dynamic_cast<IdentifierExpr*>(decl.identifier.get()))
+        getEnviroment()->define(identifier->lexeme, TokenType::structKey, false, nullptr);
+
+    enterScope(getEnviroment());
+    innerCheck(*decl.body);
+    exitScope();
 }
 
 /* ------- Helper Scoping Methods --------*/
