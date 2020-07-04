@@ -17,6 +17,7 @@ std::vector<std::unique_ptr<Node>> Parser::parse() {
             case TokenType::constKey: nodes.push_back(parseConstDecl()); break;
             case TokenType::funcKey: nodes.push_back(parseFuncDecl()); break;
             case TokenType::classKey: nodes.push_back(parseClassDecl()); break;
+            case TokenType::structKey: nodes.push_back(parseStructDecl()); break;
             case TokenType::whileKey: nodes.push_back(parseWhileStmt()); break;
             case TokenType::ifKey: nodes.push_back(parseIfStmt()); break;
             case TokenType::returnKey: nodes.push_back(parseReturnStmt()); break;
@@ -41,7 +42,6 @@ std::unique_ptr<Block> Parser::parseBlock() {
         else if (tokens[index].type == TokenType::varKey) nodes.push_back(parseVariableDecl());
         else if (tokens[index].type == TokenType::constKey) nodes.push_back(parseConstDecl());
         else if (tokens[index].type == TokenType::funcKey) nodes.push_back(parseFuncDecl());
-        else if (tokens[index].type == TokenType::classKey) nodes.push_back(parseClassDecl());
 		else nodes.push_back(parseOrLogicalExpr());
 	}
     
@@ -145,9 +145,24 @@ std::unique_ptr<Decl> Parser::parseClassDecl() {
     if (IdentifierExpr* result = dynamic_cast<IdentifierExpr*>(parsePrimaryExpr().get())) {
         std::string str = result->lexeme;
         identifier = std::unique_ptr<IdentifierExpr> { new IdentifierExpr{str} };
-    } else throw "[ERROR] Function declaration must containt a valid identifier";
+    } else throw "[ERROR] Class declaration must contain a valid identifier";
     
     return std::unique_ptr<ClassDecl> { new ClassDecl{identifier, parseBlock()} };
+}
+
+std::unique_ptr<Decl> Parser::parseStructDecl() {
+    std::unique_ptr<IdentifierExpr> identifier;
+
+    //Consume struct key
+    consume(TokenType::structKey);
+
+    //Get identifier
+    if (IdentifierExpr* result = dynamic_cast<IdentifierExpr*>(parsePrimaryExpr().get())) {
+        std::string str = result->lexeme;
+        identifier = std::unique_ptr<IdentifierExpr> { new IdentifierExpr(str) };
+    } else throw "[ERROR] Struct declaration must contain a valid identifier";
+
+    return std::unique_ptr<StructDecl> { new StructDecl{identifier, parseBlock()} };
 }
 
 /* ---- MARK: Parsing Statements ------ */

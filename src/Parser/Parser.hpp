@@ -47,7 +47,8 @@ private:
     std::unique_ptr<Decl> parseConstDecl();
     std::unique_ptr<Decl> parseFuncDecl();
     std::unique_ptr<Decl> parseClassDecl();
-        
+    std::unique_ptr<Decl> parseStructDecl();
+
     //Consume a token if current token != type an exception is thrown
     void consume(TokenType type);
     std::vector<std::unique_ptr<Expr>> parseArgumentList();
