@@ -211,7 +211,15 @@ void ASTVisualizer::visit(ClassDecl& decl) {
 }
 
 void ASTVisualizer::visit(StructDecl& decl) {
-    //Implement 
+    for (unsigned int i = 0; i < level; i++)
+        std::cout << "  ";
+    print(scope, false);
+    
+    print("struct ", false);
+    eval(*decl.identifier);
+    print("", true);
+    eval(*decl.body);
+
 }
 
 template <typename T>
