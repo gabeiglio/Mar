@@ -51,7 +51,7 @@ private:
     std::map<std::string, TokenType> keywords = {
         {"var", TokenType::varKey}, {"const", TokenType::constKey}, {"if", TokenType::ifKey}, {"else", TokenType::elseKey},
         {"int", TokenType::intType}, {"double", TokenType::doubleType}, {"bool", TokenType::boolType}, {"char", TokenType::charType},
-        {"string", TokenType::stringType}, {"void", TokenType::voidType}, {"for", TokenType::forKey}, {"in", TokenType::inKey},  {"true", TokenType::boolLiteral}, {"false", TokenType::boolLiteral}, {"func", TokenType::funcKey}, {"class", TokenType::classKey}, {"nil", TokenType::nilLiteral}, {"while", TokenType::whileKey}, {"return", TokenType::returnKey}
+        {"string", TokenType::stringType}, {"void", TokenType::voidType}, {"for", TokenType::forKey}, {"in", TokenType::inKey},  {"true", TokenType::boolLiteral}, {"false", TokenType::boolLiteral}, {"func", TokenType::funcKey}, {"struct", TokenType::structKey}, {"class", TokenType::classKey}, {"nil", TokenType::nilLiteral}, {"while", TokenType::whileKey}, {"return", TokenType::returnKey}
     };
 
 public:
