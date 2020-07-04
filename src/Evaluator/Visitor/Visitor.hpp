@@ -28,6 +28,7 @@ struct VarDecl;
 struct ConstDecl;
 struct FuncDecl;
 struct ClassDecl;
+struct StructDecl;
 
 //Block
 struct Block;
@@ -63,7 +64,8 @@ struct Visitor {
     virtual T visit(ConstDecl& decl) = 0;
     virtual T visit(FuncDecl& decl) = 0;
     virtual T visit(ClassDecl& decl) = 0;
-    
+    virtual T visit(StructDecl& decl) = 0;
+
 };
 
 #endif

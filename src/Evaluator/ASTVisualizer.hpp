@@ -47,7 +47,8 @@ private:
     void visit(ConstDecl& decl) override;
     void visit(FuncDecl& decl) override;
     void visit(ClassDecl& decl) override;
-    
+    void visit(StructDecl& decl) override;
+
     //Inner evaluate method
     void eval(Node& node);
 

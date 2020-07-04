@@ -151,6 +151,10 @@ void SemanticAnalyzer::visit(ClassDecl& decl) {
     exitScope();
 }
 
+void SemanticAnalyzer::visit(StructDecl& decl) {
+    //Implement
+}
+
 /* ------- Helper Scoping Methods --------*/
 SymbolTable* SemanticAnalyzer::getEnviroment() {
     return enviroment;

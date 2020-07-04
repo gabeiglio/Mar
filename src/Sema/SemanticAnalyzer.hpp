@@ -48,7 +48,8 @@ private:
     void visit(ConstDecl& decl) override;
     void visit(FuncDecl& decl) override;
     void visit(ClassDecl& decl) override;
-    
+    void visit(StructDecl& decl) override;
+
     //Helper Scoping methods
     SymbolTable* getEnviroment();
     void enterScope(SymbolTable* enclosing);

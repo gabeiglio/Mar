@@ -210,6 +210,10 @@ void ASTVisualizer::visit(ClassDecl& decl) {
     eval(*decl.body);
 }
 
+void ASTVisualizer::visit(StructDecl& decl) {
+    //Implement 
+}
+
 template <typename T>
 void ASTVisualizer::print(T object, bool newLine) {
     std::cout << object;

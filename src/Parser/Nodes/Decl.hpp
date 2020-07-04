@@ -76,7 +76,7 @@ struct ClassDecl: public Decl {
 
 struct StructDecl: public Decl {
     std::unique_ptr<IdentifierExpr> identifier;
-    std::unique_ptr<Block> Body;
+    std::unique_ptr<Block> body;
     StructDecl(std::unique_ptr<IdentifierExpr>& identifier, std::unique_ptr<Block> body): identifier(std::move(identifier)), body(std::move(body)) {}
 
     void accept(Visitor<void>& visitor) { visitor.visit(*this); }
