@@ -55,7 +55,7 @@ then after that is done, we go to the root folder againg and run these commands:
 $ mkdir build
 $ cd build
 $ cmake ..
-$ make .
+$ make all
 `````
 
 There are two commands to run the compiler either:
