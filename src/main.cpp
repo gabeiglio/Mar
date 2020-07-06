@@ -11,8 +11,8 @@
 
 #include "Lexer/Lexer.hpp"
 #include "Parser/Parser.hpp"
-#include "Evaluator/ASTVisualizer.hpp"
 #include "Sema/SemanticAnalyzer.hpp"
+#include "Evaluator/ASTVisualizer.hpp"
 #include "Sema/SymbolTable/SymbolTable.hpp"
 
 template<typename T>
@@ -37,7 +37,7 @@ void compile(T source) {
         SymbolTable* enviroment = new SymbolTable();
         SemanticAnalyzer sema(nodes);
         sema.performAnalysis(enviroment);
-
+		
     } catch (const char* error) {
         std::cerr << error << std::endl;
     } catch (const std::string& error) {
