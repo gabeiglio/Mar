@@ -7,9 +7,9 @@
 //
 
 #include "Lexer.hpp"
+#include <iostream>
 
 Lexer::Lexer(std::string& sourceFile) {
-    
     //Open and check file
     file.open(sourceFile, std::ifstream::binary);
     if (!file.is_open()) throw "[ERROR] Source file could not be opened";
@@ -41,8 +41,8 @@ Lexer::Lexer(char* sourceCode) {
 
 Lexer::~Lexer() {
     file.close();
-    delete[] buffer1;
-    delete[] buffer2;
+    //delete buffer1[]
+    //delete buffer2[]
 }
 
 //Advance the forward pointer by default argument 1, though it can be more
