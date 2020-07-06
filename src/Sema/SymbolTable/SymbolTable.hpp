@@ -3,11 +3,12 @@
 #ifndef SymbolTable_hpp
 #define SymbolTable_hpp
 
-#include "/Users/gabeiglio/Desktop/Developer/Mar/src/Lexer/Token.hpp"
-#include "/Users/gabeiglio/Desktop/Developer/Mar/src/Parser/Nodes/Decl.hpp"
-#include "/Users/gabeiglio/Desktop/Developer/Mar/src/Parser/Nodes/Expr.hpp"
-#include "/Users/gabeiglio/Desktop/Developer/Mar/src/Parser/Nodes/Stmt.hpp"
 #include <map>
+
+#include "Lexer/Token.hpp"
+#include "Parser/Nodes/Decl.hpp"
+#include "Parser/Nodes/Expr.hpp"
+#include "Parser/Nodes/Stmt.hpp"
 
 struct Symbol {
     std::string identifier;

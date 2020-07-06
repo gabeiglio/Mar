@@ -15,7 +15,7 @@
 #include "Nodes/Expr.hpp"
 #include "Nodes/Stmt.hpp"
 #include "Nodes/Decl.hpp"
-#include "/Users/gabeiglio/Desktop/Developer/Mar/src/Lexer/Token.hpp"
+#include "Lexer/Token.hpp"
 
 class Parser {
 private:

@@ -291,6 +291,17 @@ std::unique_ptr<Expr> Parser::parseCallOrAssignmentExpr() {
             std::unique_ptr<IdentifierExpr> name = std::unique_ptr<IdentifierExpr> { new IdentifierExpr{result->lexeme} };
             return std::unique_ptr<AssignExpr> { new AssignExpr{name, parseOrLogicalExpr()} };
         }
+    
+        //Accesing property
+        if (tokens[index].type == TokenType::point) {
+            consume(TokenType::point);
+            
+            //Get identifier of the property being called
+            std::unique_ptr<Expr> property = parsePrimaryExpr();
+            if (IdentifierExpr* propertyResult = dynamic_cast<IdentifierExpr*>(property.get())) {
+                return std::unique_ptr<IdentifierExpr> { new IdentifierExpr{result->lexeme, propertyResult->lexeme} };
+            }
+        }
     }
     
     return identifier;

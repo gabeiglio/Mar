@@ -9,10 +9,11 @@
 #ifndef ASTVisualizer_hpp
 #define ASTVisualizer_hpp
 
-#include "/Users/gabeiglio/Desktop/Developer/Mar/src/Parser/Nodes/Stmt.hpp"
-#include "/Users/gabeiglio/Desktop/Developer/Mar/src/Parser/Nodes/Decl.hpp"
-#include "/Users/gabeiglio/Desktop/Developer/Mar/src/Evaluator/Visitor/Visitor.hpp"
 #include <iostream>
+
+#include "Parser/Nodes/Stmt.hpp"
+#include "Parser/Nodes/Decl.hpp"
+#include "Evaluator/Visitor/Visitor.hpp"
 
 class ASTVisualizer: public Visitor<void> {
 private:

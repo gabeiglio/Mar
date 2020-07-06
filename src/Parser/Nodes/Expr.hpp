@@ -13,8 +13,9 @@
 
 #include <string>
 #include <vector>
-#include "/Users/gabeiglio/Desktop/Developer/Mar/src/Lexer/Token.hpp"
-#include "/Users/gabeiglio/Desktop/Developer/Mar/src/Evaluator/Visitor/Visitor.hpp"
+
+#include "Lexer/Token.hpp"
+#include "Evaluator/Visitor/Visitor.hpp"
 
 //Parent Node of Expr, Stmt, Decl
 struct Node {
@@ -31,8 +32,11 @@ struct Expr: public Node {
 
 struct IdentifierExpr: public Expr {
     std::string lexeme;
+    std::string property;
+
     IdentifierExpr(std::string& lexeme): lexeme(lexeme) {}
-    
+    IdentifierExpr(std::string& lexeme, std::string& property): lexeme(lexeme), property(property) {}
+
     void accept(Visitor<void>& visitor) { visitor.visit(*this); }
 
 };

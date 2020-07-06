@@ -22,7 +22,9 @@ void ASTVisualizer::eval(Node& node) {
 
 //Expr
 void ASTVisualizer::visit(IdentifierExpr& expr) {
-    print(expr.lexeme, false);
+    if (expr.property != "")
+        print(expr.lexeme + "." + expr.property, false);
+    else  print(expr.lexeme, false);
 }
 
 void ASTVisualizer::visit(IntegerExpr& expr) {

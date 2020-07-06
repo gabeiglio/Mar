@@ -12,10 +12,11 @@
 #define Decl_hpp
 
 #include <vector>
+
 #include "Expr.hpp"
 #include "Stmt.hpp"
-#include "/Users/gabeiglio/Desktop/Developer/Mar/src/Lexer/Token.hpp"
-#include "/Users/gabeiglio/Desktop/Developer/Mar/src/Evaluator/Visitor/Visitor.hpp"
+#include "Lexer/Token.hpp"
+#include "Evaluator/Visitor/Visitor.hpp"
 
 struct Decl: public Node {
     virtual ~Decl() {};

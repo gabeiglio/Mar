@@ -4,12 +4,12 @@
 
 #import <vector>
 
-#include "/Users/gabeiglio/Desktop/Developer/Mar/src/Lexer/Token.hpp"
-#include "/Users/gabeiglio/Desktop/Developer/Mar/src/Parser/Nodes/Decl.hpp"
-#include "/Users/gabeiglio/Desktop/Developer/Mar/src/Parser/Nodes/Expr.hpp"
-#include "/Users/gabeiglio/Desktop/Developer/Mar/src/Parser/Nodes/Stmt.hpp"
-#include "/Users/gabeiglio/Desktop/Developer/Mar/src/Evaluator/Visitor/Visitor.hpp"
+#include "Lexer/Token.hpp"
+#include "Parser/Nodes/Decl.hpp"
+#include "Parser/Nodes/Expr.hpp"
+#include "Parser/Nodes/Stmt.hpp"
 #include "SymbolTable/SymbolTable.hpp"
+#include "Evaluator/Visitor/Visitor.hpp"
 
 #pragma once
 
