@@ -44,8 +44,7 @@ void ASTVisualizer::visit(CharExpr& expr) {
 }
 
 void ASTVisualizer::visit(BoolExpr& expr) {
-    if (expr.lexeme) print("true", false);
-    else print("false", false);
+    print(expr.lexeme ? "true" : "false", false);
 }
 
 void ASTVisualizer::visit(UnaryExpr& expr) {
