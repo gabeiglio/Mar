@@ -19,7 +19,7 @@ class Lexer {
 private:
     
     //Constants
-    const ssize_t chunkSize = 1094;
+    static const ssize_t chunkSize = 1094;
     
     //Properties to initialize
     std::ifstream file;
@@ -57,7 +57,7 @@ private:
 public:
 
 	//Construct with filepath
-    Lexer(std::string& sourceFile);
+    Lexer(const std::string& sourceFile);
 
 	//Construct with small source code (REPL)
 	Lexer(char* sourceCode);

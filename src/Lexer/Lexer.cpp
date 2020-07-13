@@ -9,7 +9,7 @@
 #include "Lexer.hpp"
 #include <iostream>
 
-Lexer::Lexer(std::string& sourceFile) {
+Lexer::Lexer(const std::string& sourceFile) {
     //Open and check file
     file.open(sourceFile, std::ifstream::binary);
     if (!file.is_open()) throw "[ERROR] Source file could not be opened";
