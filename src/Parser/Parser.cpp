@@ -1,11 +1,3 @@
-//
-//  Parser.cpp
-//  Mar
-//
-//  Created by Gabriel Igliozzi on 11/14/19.
-//  Copyright © 2019 Gabriel Igliozzi. All rights reserved.
-//
-
 #include "Parser.hpp"
 
 std::vector<std::unique_ptr<Node>> Parser::parse() {

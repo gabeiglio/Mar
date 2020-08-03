@@ -23,5 +23,5 @@ set(SOURCES ${SOURCES})
 #       ${SEMA_DIR}/SemanticAnalyzer.cpp
 #		${SEMA_DIR}/SymbolTable/SymbolTable.cpp
 #)
-add_executable(${BINARY}_run ${SOURCES})
+add_executable(${BINARY} ${SOURCES})
 add_library(${BINARY}_lib STATIC ${SOURCES})

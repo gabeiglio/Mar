@@ -1,11 +1,3 @@
-//
-//  Stmt.hpp
-//  Mar
-//
-//  Created by Gabriel Igliozzi on 12/3/19.
-//  Copyright © 2019 Gabriel Igliozzi. All rights reserved.
-//
-
 #pragma once
 
 #ifndef Stmt_hpp

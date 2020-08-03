@@ -1,11 +1,3 @@
-//
-//  Decl.hpp
-//  Mar
-//
-//  Created by Gabriel Igliozzi on 12/4/19.
-//  Copyright © 2019 Gabriel Igliozzi. All rights reserved.
-//
-
 #pragma once
 
 #ifndef Decl_hpp

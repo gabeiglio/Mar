@@ -1,11 +1,3 @@
-//
-//  Lexer.hpp
-//  Mar
-//
-//  Created by Gabriel Igliozzi on 11/13/19.
-//  Copyright © 2019 Gabriel Igliozzi. All rights reserved.
-//
-
 #ifndef Lexer_hpp
 #define Lexer_hpp
 

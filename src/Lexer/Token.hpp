@@ -1,11 +1,3 @@
-//
-//  Token.hpp
-//  Mar
-//
-//  Created by Gabriel Igliozzi on 11/14/19.
-//  Copyright © 2019 Gabriel Igliozzi. All rights reserved.
-//
-
 #pragma once
 
 #ifndef Token_h

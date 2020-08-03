@@ -1,11 +1,3 @@
-//
-//  ASTVisualizer.cpp
-//  Mar
-//
-//  Created by Gabriel Igliozzi on 11/25/19.
-//  Copyright © 2019 Gabriel Igliozzi. All rights reserved.
-//
-
 #include "ASTVisualizer.hpp"
 
 void ASTVisualizer::evaluate(std::vector<std::unique_ptr<Node>>& nodes) {
@@ -62,7 +54,16 @@ void ASTVisualizer::visit(BinaryOpExpr& expr) {
 
 void ASTVisualizer::visit(CallExpr& expr) {
 	print(scope, false);
-	print("call expr", false);
+    eval(*expr.identifier);
+    print("(", false);
+
+    for (unsigned int index = 0; index < expr.arguments.size(); index++) {
+        eval(*expr.arguments[index]);
+        if (index < expr.arguments.size() - 1)
+            print(",", false);
+    }
+
+    print(")", true);
 }
 
 void ASTVisualizer::visit(AssignExpr& expr) {

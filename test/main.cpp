@@ -1,6 +1,7 @@
 #include "gtest/gtest.h"
 #include "Lexer/Lexer.hpp"
 #include "Lexer/Token.hpp"
+#include <iostream>
 
 TEST(LexerTest, tokens) {
     //Test code
@@ -43,6 +44,24 @@ TEST(LexerTest, constTokens) {
     for (unsigned int i; i < tokens.size(); i++)
         EXPECT_TRUE(tokens[i].type == expected[i].type && tokens[i].lexeme == expected[i].lexeme);
         
+}
+
+TEST(LexerTest, comment) {
+    
+    //Test code
+    char* code = "//this is a commentary that should be ignored (single line)/n/*/nthis is a multi line/ncomment/nnot yet /n*/";
+
+    //Init lexer
+    Lexer lex(code);
+    std::vector<Token> tokens = lex.tokenize();
+
+    //debug
+    for (Token tok: tokens) 
+        std::cout << tok.lexeme << std::endl;
+
+    //There should be no tokens
+    EXPECT_TRUE(tokens.size() == 0);
+
 }
 
 int main(int argc, char *argv[]) {

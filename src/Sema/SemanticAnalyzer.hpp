@@ -1,4 +1,3 @@
-
 #ifndef SemanticAnalyzer_hpp
 #define SemanticAnalyzer_hpp
 

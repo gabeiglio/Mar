@@ -1,11 +1,3 @@
-//
-//  Lexer.cpp
-//  Mar
-//
-//  Created by Gabriel Igliozzi on 11/13/19.
-//  Copyright © 2019 Gabriel Igliozzi. All rights reserved.
-//
-
 #include "Lexer.hpp"
 #include <iostream>
 
@@ -47,8 +39,7 @@ Lexer::~Lexer() {
 
 //Advance the forward pointer by default argument 1, though it can be more
 void Lexer::advance(int by) {
-    for (int i = 0; i < by; i++)
-        ++forward;
+    forward += by;
 }
 
 void Lexer::retract() {
@@ -67,7 +58,11 @@ Token Lexer::parseNumber() {
     TokenType type = TokenType::intLiteral;
     
     while (isdigit(*forward) || *forward == '.') {
-        if (*forward == '.') type = TokenType::doubleLiteral;
+        if (*forward == '.') {
+            if (type == TokenType::doubleLiteral)
+               throw "[ERROR] Double literal is badly formatted";
+            type = TokenType::doubleLiteral;
+        }
         result += *forward;
         advance();
     }

@@ -1,11 +1,3 @@
-//
-//  Evaluator.hpp
-//  Mar
-//
-//  Created by Gabriel Igliozzi on 11/25/19.
-//  Copyright © 2019 Gabriel Igliozzi. All rights reserved.
-//
-
 #ifndef ASTVisualizer_hpp
 #define ASTVisualizer_hpp
 
