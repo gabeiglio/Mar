@@ -57,6 +57,11 @@ void SemanticAnalyzer::visit(BinaryOpExpr& expr) {
 void SemanticAnalyzer::visit(CallExpr& expr) {
     if (IdentifierExpr* result = dynamic_cast<IdentifierExpr*>(expr.identifier.get()))
         getEnviroment()->get(result->lexeme);
+
+    for (unsigned int i = 0; i < expr.arguments.size(); i++) {
+        if (Expr* result = dynamic_cast<Expr*>(expr.arguments[i].get()))
+            innerCheck(*result);
+    }
 }
 
 void SemanticAnalyzer::visit(AssignExpr& expr) {
