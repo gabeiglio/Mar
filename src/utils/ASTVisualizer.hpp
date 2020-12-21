@@ -5,7 +5,7 @@
 
 #include "Parser/Nodes/Stmt.hpp"
 #include "Parser/Nodes/Decl.hpp"
-#include "Evaluator/Visitor/Visitor.hpp"
+#include "Sema/Visitor/Visitor.hpp"
 
 class ASTVisualizer: public Visitor<void> {
 private:

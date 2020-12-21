@@ -6,7 +6,7 @@
 #include <vector>
 
 #include "Expr.hpp"
-#include "Evaluator/Visitor/Visitor.hpp"
+#include "Sema/Visitor/Visitor.hpp"
 
 struct Block;
 

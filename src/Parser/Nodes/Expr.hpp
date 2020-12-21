@@ -7,7 +7,7 @@
 #include <vector>
 
 #include "Lexer/Token.hpp"
-#include "Evaluator/Visitor/Visitor.hpp"
+#include "Sema/Visitor/Visitor.hpp"
 
 //Parent Node of Expr, Stmt, Decl
 struct Node {

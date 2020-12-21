@@ -8,7 +8,7 @@
 #include "Parser/Nodes/Expr.hpp"
 #include "Parser/Nodes/Stmt.hpp"
 #include "SymbolTable/SymbolTable.hpp"
-#include "Evaluator/Visitor/Visitor.hpp"
+#include "Sema/Visitor/Visitor.hpp"
 
 #pragma once
 

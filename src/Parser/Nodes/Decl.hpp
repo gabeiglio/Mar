@@ -8,7 +8,7 @@
 #include "Expr.hpp"
 #include "Stmt.hpp"
 #include "Lexer/Token.hpp"
-#include "Evaluator/Visitor/Visitor.hpp"
+#include "Sema/Visitor/Visitor.hpp"
 
 struct Decl: public Node {
     virtual ~Decl() {};
