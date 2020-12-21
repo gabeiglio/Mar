@@ -25,17 +25,30 @@ std::vector<std::unique_ptr<Node>> Parser::parse() {
 std::unique_ptr<Block> Parser::parseBlock() {
     std::vector<std::unique_ptr<Node>> nodes;
     consume(TokenType::openBrace);
-    
+
     while (tokens[index].type != TokenType::closeBrace) {
-        if (tokens[index].type == TokenType::whileKey) nodes.push_back(parseWhileStmt());
-        else if (tokens[index].type == TokenType::returnKey) nodes.push_back(parseReturnStmt());
-        else if (tokens[index].type == TokenType::ifKey) nodes.push_back(parseIfStmt());
-        else if (tokens[index].type == TokenType::forKey) nodes.push_back(parseForInStmt());
-        else if (tokens[index].type == TokenType::varKey) nodes.push_back(parseVariableDecl());
-        else if (tokens[index].type == TokenType::constKey) nodes.push_back(parseConstDecl());
-        else if (tokens[index].type == TokenType::funcKey) nodes.push_back(parseFuncDecl());
-		else nodes.push_back(parseOrLogicalExpr());
-	}
+        switch (tokens[index].type) {
+            case TokenType::whileKey: nodes.push_back(parseWhileStmt()); break;
+            case TokenType::returnKey: nodes.push_back(parseReturnStmt()); break;
+            case TokenType::ifKey: nodes.push_back(parseIfStmt()); break;
+            case TokenType::forKey: nodes.push_back(parseForInStmt()); break;
+            case TokenType::varKey: nodes.push_back(parseVariableDecl()); break;
+            case TokenType::constKey: nodes.push_back(parseConstDecl()); break;
+            case TokenType::funcKey: nodes.push_back(parseFuncDecl()); break;
+            default: nodes.push_back(parseOrLogicalExpr());
+        }
+    }
+    
+    // while (tokens[index].type != TokenType::closeBrace) {
+    //     if (tokens[index].type == TokenType::whileKey) nodes.push_back(parseWhileStmt());
+    //     else if (tokens[index].type == TokenType::returnKey) nodes.push_back(parseReturnStmt());
+    //     else if (tokens[index].type == TokenType::ifKey) nodes.push_back(parseIfStmt());
+    //     else if (tokens[index].type == TokenType::forKey) nodes.push_back(parseForInStmt());
+    //     else if (tokens[index].type == TokenType::varKey) nodes.push_back(parseVariableDecl());
+    //     else if (tokens[index].type == TokenType::constKey) nodes.push_back(parseConstDecl());
+    //     else if (tokens[index].type == TokenType::funcKey) nodes.push_back(parseFuncDecl());
+	// 	else nodes.push_back(parseOrLogicalExpr());
+	// }
     
     consume(TokenType::closeBrace);
     return std::unique_ptr<Block> { new Block{nodes} };
