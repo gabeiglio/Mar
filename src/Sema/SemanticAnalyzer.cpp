@@ -27,7 +27,6 @@ void SemanticAnalyzer::visit(IdentifierExpr& expr) {
 }
 
 void SemanticAnalyzer::visit(IntegerExpr& expr) {
-    
 }
 
 void SemanticAnalyzer::visit(DoubleExpr& expr) {

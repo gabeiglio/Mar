@@ -5,7 +5,7 @@
 
 TEST(LexerTest, tokens) {
     //Test code
-     char*  code = "var age int = 19";
+     char* code = "var age int = 19";
 
     //Init lexer and tokenize
     Lexer lex(code);
@@ -49,10 +49,10 @@ TEST(LexerTest, constTokens) {
 TEST(LexerTest, comment) {
     
     //Test code
-    char* code = "//this is a commentary that should be ignored (single line)/n/*/nthis is a multi line/ncomment/nnot yet /n*/";
-
+    std::string file = "/Users/gabeiglio/Desktop/Developer/Mar/test/validation_tests/test_comments.mar";
+    
     //Init lexer
-    Lexer lex(code);
+    Lexer lex(file);
     std::vector<Token> tokens = lex.tokenize();
 
     //debug

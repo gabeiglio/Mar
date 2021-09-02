@@ -29,8 +29,6 @@ void compile(T source) {
         SymbolTable* enviroment = new SymbolTable();
         SemanticAnalyzer sema(nodes);
         sema.performAnalysis(enviroment);
-
-		//Pass through Vm or somt in which will translate to intermediate code
 		
     } catch (const char* error) {
         std::cerr << error << std::endl;

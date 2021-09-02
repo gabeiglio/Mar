@@ -1,0 +1,11 @@
+
+const age int = 19
+const name string = "Gabriel Igliozzi"
+const isTrue bool = true
+const cChar char = 'c'
+
+const uninitalized int
+
+
+
+
