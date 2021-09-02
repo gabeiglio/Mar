@@ -13,7 +13,7 @@ Lexer::Lexer(const std::string& sourceFile) {
     
     //Load buffers
     file.read(buffer1, chunkSize);
-    file.read(buffer2, chunkSize);
+    file.close();
     
     //Load pointers
     lexemeBegin = buffer1;
@@ -32,9 +32,7 @@ Lexer::Lexer(char* sourceCode) {
 }
 
 Lexer::~Lexer() {
-    file.close();
-    //delete buffer1[]
-    //delete buffer2[]
+    delete[] buffer1;
 }
 
 //Advance the forward pointer by default argument 1, though it can be more
@@ -42,14 +40,9 @@ void Lexer::advance(int by) {
     forward += by;
 }
 
-void Lexer::retract() {
-    --forward;
-}
-
 //Peek next character without incrementing the original pointer
 char Lexer::peek() {
-    char* val = forward;
-    return *++val;
+    return *(forward + 1);
 }
 
 //Return token if not null
