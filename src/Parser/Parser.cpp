@@ -38,18 +38,7 @@ std::unique_ptr<Block> Parser::parseBlock() {
             default: nodes.push_back(parseOrLogicalExpr());
         }
     }
-    
-    // while (tokens[index].type != TokenType::closeBrace) {
-    //     if (tokens[index].type == TokenType::whileKey) nodes.push_back(parseWhileStmt());
-    //     else if (tokens[index].type == TokenType::returnKey) nodes.push_back(parseReturnStmt());
-    //     else if (tokens[index].type == TokenType::ifKey) nodes.push_back(parseIfStmt());
-    //     else if (tokens[index].type == TokenType::forKey) nodes.push_back(parseForInStmt());
-    //     else if (tokens[index].type == TokenType::varKey) nodes.push_back(parseVariableDecl());
-    //     else if (tokens[index].type == TokenType::constKey) nodes.push_back(parseConstDecl());
-    //     else if (tokens[index].type == TokenType::funcKey) nodes.push_back(parseFuncDecl());
-	// 	else nodes.push_back(parseOrLogicalExpr());
-	// }
-    
+
     consume(TokenType::closeBrace);
     return std::unique_ptr<Block> { new Block{nodes} };
 }
