@@ -306,6 +306,14 @@ std::unique_ptr<Expr> Parser::parsePrimaryExpr() {
     //First we want to know if there are any available
     if (index >= tokens.size()) throw "[ERROR] Unexpexted " + tokens[--index].lexeme;
 
+    if (tokens[index].type == TokenType::openParen) {
+        index++;
+        std::unique_ptr<Expr> expr = parseOrLogicalExpr();
+        consume(TokenType::closeParen);
+
+        return expr;
+    }
+
     switch (tokens[index].type) {
         case TokenType::identifier: index++; return std::unique_ptr<IdentifierExpr> { new IdentifierExpr {tokens[index - 1].lexeme} };
         case TokenType::intLiteral: index++; return std::unique_ptr<IntegerExpr> { new IntegerExpr {stoi(tokens[index - 1].lexeme)} };
